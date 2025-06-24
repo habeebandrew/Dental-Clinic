@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr.J Dental Clinic - عيادة د. جوستينا لطب الأسنان</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c5aa0, #4a90e2);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            padding: 0.5rem;
+        }
+
+        .nav-menu a:hover {
+            color: #87ceeb;
+        }
+
+        .lang-toggle {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        .section {
+            display: none;
+            padding: 4rem 0;
+            min-height: 60vh;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            color: #2c5aa0;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        /* Home Section */
+        .hero {
+            background: linear-gradient(rgba(44, 90, 160, 0.8), rgba(74, 144, 226, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e8f4f8" width="1200" height="600"/><path fill="%23d1e7dd" d="M0,400 Q300,350 600,400 T1200,400 L1200,600 L0,600 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .doctor-image {
+            width: 100%;
+            height: 400px;
+            background: #e9ecef;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1.2rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #4a90e2;
+            margin-bottom: 1rem;
+        }
+
+        /* Working Hours */
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .hours-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .hours-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 0.5rem;
+        }
+
+        .hours-card ul {
+            list-style: none;
+        }
+
+        .hours-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Contact Form */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c5aa0;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #4a90e2;
+            margin-left: 1rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            height: 200px;
+            background: #e9ecef;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Blog */
+        .blog-post {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .blog-post h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .blog-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c5aa0;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cards-grid,
+            .services-grid,
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* RTL/LTR Support */
+        [dir="ltr"] {
+            text-align: left;
+        }
+
+        [dir="ltr"] .contact-icon {
+            margin-right: 1rem;
+            margin-left: 0;
+        }
+
+        [dir="ltr"] .nav-menu {
+            margin-right: auto;
+        }
+
+        [dir="rtl"] .nav-menu {
+            margin-left: auto;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section.active {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div>Dr.J Dental Clinic</div>
+                <div style="font-size: 0.8rem; font-weight: normal;">عيادة د. جوستينا لطب الأسنان</div>
+            </div>
+            
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" onclick="showSection('home')" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                <li><a href="#" onclick="showSection('about')" data-ar="من نحن" data-en="About">من نحن</a></li>
+                <li><a href="#" onclick="showSection('services')" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                <li><a href="#" onclick="showSection('hours')" data-ar="ساعات العمل" data-en="Hours">ساعات العمل</a></li>
+                <li><a href="#" onclick="showSection('contact')" data-ar="الحجز والتواصل" data-en="Contact">الحجز والتواصل</a></li>
+                <li><a href="#" onclick="showSection('gallery')" data-ar="المعرض" data-en="Gallery">المعرض</a></li>
+                <li><a href="#" onclick="showSection('blog')" data-ar="المدونة" data-en="Blog">المدونة</a></li>
+            </ul>
+            
+            <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="container">
+                    <h1 data-ar="مرحباً بكم في عيادة د. جوستينا لطب الأسنان" data-en="Welcome to Dr. Justina's Dental Clinic">مرحباً بكم في عيادة د. جوستينا لطب الأسنان</h1>
+                    <p data-ar="نقدم لكم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية" data-en="We provide dental services with the highest standards of quality and professionalism">نقدم لكم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية</p>
+                    <a href="#" class="cta-button" onclick="showSection('contact')" data-ar="احجز موعدك الآن" data-en="Book Your Appointment">احجز موعدك الآن</a>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3 data-ar="الدقة" data-en="Precision">الدقة</h3>
+                        <p data-ar="نحرص على تقديم أدق الخدمات الطبية باستخدام أحدث التقنيات والمعدات" data-en="We ensure the most precise medical services using the latest technologies and equipment">نحرص على تقديم أدق الخدمات الطبية باستخدام أحدث التقنيات والمعدات</p>
+                    </div>
+                    <div class="card">
+                        <h3 data-ar="الإنسانية" data-en="Humanity">الإنسانية</h3>
+                        <p data-ar="نتعامل مع كل مريض بكل احترام وتفهم لاحتياجاته الخاصة" data-en="We treat every patient with respect and understanding of their special needs">نتعامل مع كل مريض بكل احترام وتفهم لاحتياجاته الخاصة</p>
+                    </div>
+                    <div class="card">
+                        <h3 data-ar="الثقة" data-en="Trust">الثقة</h3>
+                        <p data-ar="نبني علاقة ثقة طويلة الأمد مع مرضانا من خلال الشفافية والصدق" data-en="We build long-term trust relationships with our patients through transparency and honesty">نبني علاقة ثقة طويلة الأمد مع مرضانا من خلال الشفافية والصدق</p>
+                    </div>
+                    <div class="card">
+                        <h3 data-ar="التميز" data-en="Excellence">التميز</h3>
+                        <p data-ar="نسعى دائماً للتميز في كل ما نقدمه من خدمات طبية" data-en="We always strive for excellence in all the medical services we provide">نسعى دائماً للتميز في كل ما نقدمه من خدمات طبية</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 data-ar="من نحن" data-en="About Us">من نحن</h2>
+                <div class="about-content">
+                    <div class="doctor-image" data-ar="صورة د. جوستينا يوسف التلي" data-en="Dr. Justina Youssef Al-Tali Photo">صورة د. جوستينا يوسف التلي</div>
+                    <div>
+                        <h3 data-ar="د. جوستينا يوسف التلي" data-en="Dr. Justina Youssef Al-Tali">د. جوستينا يوسف التلي</h3>
+                        <p data-ar="طبيبة أسنان متخصصة حاصلة على بكالوريوس في طب الأسنان وجراحتها، تتمتع بخبرة واسعة في مجال طب الأسنان مع أكثر من 100 عمل سريري خلال فترة الدراسة." data-en="Specialized dentist with a Bachelor's degree in Dentistry and Oral Surgery, with extensive experience in dentistry with more than 100 clinical cases during studies.">طبيبة أسنان متخصصة حاصلة على بكالوريوس في طب الأسنان وجراحتها، تتمتع بخبرة واسعة في مجال طب الأسنان مع أكثر من 100 عمل سريري خلال فترة الدراسة.</p>
+                        
+                        <h4 data-ar="ما يميز عيادتنا:" data-en="What Makes Our Clinic Special:">ما يميز عيادتنا:</h4>
+                        <ul>
+                            <li data-ar="استخدام مواد عالية الجودة في جميع العلاجات" data-en="Using high-quality materials in all treatments">استخدام مواد عالية الجودة في جميع العلاجات</li>
+                            <li data-ar="جهاز تصوير شعاعي محمول للتشخيص الدقيق" data-en="Portable X-ray device for accurate diagnosis">جهاز تصوير شعاعي محمول للتشخيص الدقيق</li>
+                            <li data-ar="جهاز Apex Locator لتحديد طول القناة بدقة" data-en="Apex Locator device for precise root canal length determination">جهاز Apex Locator لتحديد طول القناة بدقة</li>
+                            <li data-ar="الالتزام الصارم بالأسس الأكاديمية والعلمية" data-en="Strict adherence to academic and scientific foundations">الالتزام الصارم بالأسس الأكاديمية والعلمية</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2 data-ar="خدماتنا" data-en="Our Services">خدماتنا</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🦷</div>
+                        <h3 data-ar="ترميمات تجميلية" data-en="Cosmetic Restorations">ترميمات تجميلية</h3>
+                        <p data-ar="حشوات تجميلية بمواد عالية الجودة لاستعادة شكل ووظيفة الأسنان" data-en="Cosmetic fillings with high-quality materials to restore tooth shape and function">حشوات تجميلية بمواد عالية الجودة لاستعادة شكل ووظيفة الأسنان</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👑</div>
+                        <h3 data-ar="جسور وتيجان وفينير" data-en="Bridges, Crowns & Veneers">جسور وتيجان وفينير</h3>
+                        <p data-ar="تركيبات ثابتة ومتحركة لتعويض الأسنان المفقودة وتحسين الابتسامة" data-en="Fixed and removable prosthetics to replace missing teeth and improve smile">تركيبات ثابتة ومتحركة لتعويض الأسنان المفقودة وتحسين الابتسامة</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3 data-ar="زراعة الأسنان" data-en="Dental Implants">زراعة الأسنان</h3>
+                        <p data-ar="حلول دائمة لتعويض الأسنان المفقودة بزراعات عالية الجودة" data-en="Permanent solutions for missing teeth with high-quality implants">حلول دائمة لتعويض الأسنان المفقودة بزراعات عالية الجودة</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">⚕️</div>
+                        <h3 data-ar="معالجة لبية" data-en="Root Canal Treatment">معالجة لبية</h3>
+                        <p data-ar="علاج عصب السن بدقة عالية باستخدام أحدث التقنيات" data-en="Precise root canal treatment using the latest techniques">علاج عصب السن بدقة عالية باستخدام أحدث التقنيات</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📐</div>
+                        <h3 data-ar="تقويم الأسنان" data-en="Orthodontics">تقويم الأسنان</h3>
+                        <p data-ar="تصحيح اصطفاف الأسنان للحصول على ابتسامة مثالية" data-en="Correcting tooth alignment for a perfect smile">تصحيح اصطفاف الأسنان للحصول على ابتسامة مثالية</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔨</div>
+                        <h3 data-ar="قلع الأسنان" data-en="Tooth Extraction">قلع الأسنان</h3>
+                        <p data-ar="إزالة الأسنان المتضررة بأمان وبأقل ألم ممكن" data-en="Safe removal of damaged teeth with minimal pain">إزالة الأسنان المتضررة بأمان وبأقل ألم ممكن</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👶</div>
+                        <h3 data-ar="علاج الأطفال" data-en="Pediatric Dentistry">علاج الأطفال</h3>
+                        <p data-ar="رعاية أسنان الأطفال في بيئة مريحة وودودة" data-en="Children's dental care in a comfortable and friendly environment">رعاية أسنان الأطفال في بيئة مريحة وودودة</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Working Hours Section -->
+        <section id="hours" class="section">
+            <div class="container">
+                <h2 data-ar="ساعات العمل" data-en="Working Hours">ساعات العمل</h2>
+                <div class="hours-grid">
+                    <div class="hours-card">
+                        <h3 data-ar="أوقات الدوام" data-en="Working Hours">أوقات الدوام</h3>
+                        <ul>
+                            <li data-ar="الفترة الصباحية: 9:00 ص - 2:00 ظ" data-en="Morning: 9:00 AM - 2:00 PM">الفترة الصباحية: 9:00 ص - 2:00 ظ</li>
+                            <li data-ar="الفترة المسائية: 4:00 ع - 9:30 م" data-en="Evening: 4:00 PM - 9:30 PM">الفترة المسائية: 4:00 ع - 9:30 م</li>
+                            <li data-ar="أو حتى 10:00 مساءً حسب الحاجة" data-en="Or until 10:00 PM as needed">أو حتى 10:00 مساءً حسب الحاجة</li>
+                            <li style="color: #dc3545;" data-ar="مغلق يوم الأحد" data-en="Closed on Sundays">مغلق يوم الأحد</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="hours-card">
+                        <h3 data-ar="خدمات خاصة" data-en="Special Services">خدمات خاصة</h3>
+                        <ul>
+                            <li data-ar="معالجات تقويمية: الإثنين والأربعاء فقط" data-en="Orthodontic treatments: Mondays and Wednesdays only">معالجات تقويمية: الإثنين والأربعاء فقط</li>
+                            <li data-ar="الحالات الطارئة: مرحب بها دائماً" data-en="Emergency cases: Always welcome">الحالات الطارئة: مرحب بها دائماً</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="hours-card">
+                        <h3 data-ar="معلومات مهمة" data-en="Important Information">معلومات مهمة</h3>
+                        <ul>
+                            <li data-ar="الحجز المسبق مطلوب" data-en="Prior appointment required">الحجز المسبق مطلوب</li>
+                            <li data-ar="لا توجد مواقف سيارات خاصة" data-en="No private parking available">لا توجد مواقف سيارات خاصة</li>
+                            <li data-ar="يُرجى الحضور قبل 10 دقائق من الموعد" data-en="Please arrive 10 minutes before appointment">يُرجى الحضور قبل 10 دقائق من الموعد</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 data-ar="الحجز والتواصل" data-en="Contact & Booking">الحجز والتواصل</h2>
+                <div class="contact-content">
+                    <div>
+                        <h3 data-ar="احجز موعدك" data-en="Book Your Appointment">احجز موعدك</h3>
+                        <form id="bookingForm" onsubmit="handleBooking(event)">
+                            <div class="form-group">
+                                <label data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
+                                <input type="text" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
+                                <input type="tel" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label data-ar="التاريخ المفضل" data-en="Preferred Date">التاريخ المفضل</label>
+                                <input type="date" name="date" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label data-ar="نوع الخدمة" data-en="Service Type">نوع الخدمة</label>
+                                <select name="service" required>
+                                    <option value="" data-ar="اختر الخدمة" data-en="Select Service">اختر الخدمة</option>
+                                    <option value="restoration" data-ar="ترميمات تجميلية" data-en="Cosmetic Restorations">ترميمات تجميلية</option>
+                                    <option value="crowns" data-ar="جسور وتيجان وفينير" data-en="Bridges, Crowns & Veneers">جسور وتيجان وفينير</option>
+                                    <option value="implants" data-ar="زراعة الأسنان" data-en="Dental Implants">زراعة الأسنان</option>
+                                    <option value="root-canal" data-ar="معالجة لبية" data-en="Root Canal Treatment">معالجة لبية</option>
+                                    <option value="orthodontics" data-ar="تقويم الأسنان" data-en="Orthodontics">تقويم الأسنان</option>
+                                    <option value="extraction" data-ar="قلع الأسنان" data-en="Tooth Extraction">قلع الأسنان</option>
+                                    <option value="pediatric" data-ar="علاج الأطفال" data-en="Pediatric Dentistry">علاج الأطفال</option>
+                                    <option value="emergency" data-ar="حالة طارئة" data-en="Emergency">حالة طارئة</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label data-ar="ملاحظات إضافية" data-en="Additional Notes">ملاحظات إضافية</label>
+                                <textarea name="notes" rows="4" placeholder="" data-ar-placeholder="أي معلومات إضافية تود إضافتها..." data-en-placeholder="Any additional information you'd like to add..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="cta-button" data-ar="إرسال طلب الحجز" data-en="Submit Booking Request">إرسال طلب الحجز</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h3 data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h3>
+                        
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <h4 data-ar="الهاتف" data-en="Phone">الهاتف</h4>
+                                <p>+962 79 123 4567</p>
+                                <p data-ar="متاح للمكالمات والواتساب" data-en="Available for calls and WhatsApp">متاح للمكالمات والواتساب</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <div>
+                                <h4 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h4>
+                                <p>dr.justina@dentalclinic.com</p>
+                                <p data-ar="نرد على الرسائل خلال 24 ساعة" data-en="We respond to messages within 24 hours">نرد على الرسائل خلال 24 ساعة</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <h4 data-ar="العنوان" data-en="Address">العنوان</h4>
+                                <p data-ar="عمان، الأردن" data-en="Amman, Jordan">عمان، الأردن</p>
+                                <p data-ar="سيتم تزويدكم بالعنوان التفصيلي عند الحجز" data-en="Detailed address will be provided upon booking">سيتم تزويدكم بالعنوان التفصيلي عند الحجز</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-icon">⏰</span>
+                            <div>
+                                <h4 data-ar="أوقات الرد السريع" data-en="Quick Response Hours">أوقات الرد السريع</h4>
+                                <p data-ar="9:00 ص - 9:00 م" data-en="9:00 AM - 9:00 PM">9:00 ص - 9:00 م</p>
+                                <p data-ar="الحالات الطارئة 24/7" data-en="Emergency cases 24/7">الحالات الطارئة 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2 data-ar="معرض الصور" data-en="Gallery">معرض الصور</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-ar="صورة العيادة الخارجية" data-en="Clinic Exterior">صورة العيادة الخارجية</div>
+                    <div class="gallery-item" data-ar="غرفة الاستقبال" data-en="Reception Area">غرفة الاستقبال</div>
+                    <div class="gallery-item" data-ar="غرفة العلاج الرئيسية" data-en="Main Treatment Room">غرفة العلاج الرئيسية</div>
+                    <div class="gallery-item" data-ar="الأجهزة الطبية" data-en="Medical Equipment">الأجهزة الطبية</div>
+                    <div class="gallery-item" data-ar="قبل وبعد - الحالة 1" data-en="Before & After - Case 1">قبل وبعد - الحالة 1</div>
+                    <div class="gallery-item" data-ar="قبل وبعد - الحالة 2" data-en="Before & After - Case 2">قبل وبعد - الحالة 2</div>
+                    <div class="gallery-item" data-ar="قبل وبعد - الحالة 3" data-en="Before & After - Case 3">قبل وبعد - الحالة 3</div>
+                    <div class="gallery-item" data-ar="منطقة التعقيم" data-en="Sterilization Area">منطقة التعقيم</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <div class="container">
+                <h2 data-ar="المدونة والتثقيف" data-en="Blog & Education">المدونة والتثقيف</h2>
+                
+                <article class="blog-post">
+                    <h3 data-ar="أهمية تنظيف الأسنان اليومي: دليلك الشامل لابتسامة صحية" data-en="The Importance of Daily Teeth Cleaning: Your Complete Guide to a Healthy Smile">أهمية تنظيف الأسنان اليومي: دليلك الشامل لابتسامة صحية</h3>
+                    <div class="blog-date" data-ar="تاريخ النشر: 20 يونيو 2025" data-en="Published: June 20, 2025">تاريخ النشر: 20 يونيو 2025</div>
+                    
+                    <p data-ar="يعتبر تنظيف الأسنان اليومي من أهم العادات الصحية التي يجب أن نمارسها للحفاظ على صحة الفم والأسنان. في هذا المقال، سنتعرف على الطريقة الصحيحة لتنظيف الأسنان والأدوات المناسبة لذلك." data-en="Daily teeth cleaning is one of the most important healthy habits we should practice to maintain oral and dental health. In this article, we'll learn about the correct way to clean teeth and the appropriate tools for it.">يعتبر تنظيف الأسنان اليومي من أهم العادات الصحية التي يجب أن نمارسها للحفاظ على صحة الفم والأسنان. في هذا المقال، سنتعرف على الطريقة الصحيحة لتنظيف الأسنان والأدوات المناسبة لذلك.</p>
+                    
+                    <h4 data-ar="الطريقة الصحيحة لتنظيف الأسنان:" data-en="The Correct Way to Clean Teeth:">الطريقة الصحيحة لتنظيف الأسنان:</h4>
+                    
+                    <p data-ar="1. استخدم فرشاة أسنان ناعمة أو متوسطة النعومة مع معجون أسنان يحتوي على الفلورايد." data-en="1. Use a soft or medium-soft toothbrush with fluoride toothpaste.">1. استخدم فرشاة أسنان ناعمة أو متوسطة النعومة مع معجون أسنان يحتوي على الفلورايد.</p>
+                    
+                    <p data-ar="2. نظف أسنانك لمدة دقيقتين على الأقل، مرتين يومياً (صباحاً ومساءً)." data-en="2. Brush your teeth for at least two minutes, twice daily (morning and evening).">2. نظف أسنانك لمدة دقيقتين على الأقل، مرتين يومياً (صباحاً ومساءً).</p>
+                    
+                    <p data-ar="3. استخدم حركات دائرية لطيفة بدلاً من الحركات الأفقية القوية التي قد تضر باللثة." data-en="3. Use gentle circular motions instead of strong horizontal movements that may harm the gums.">3. استخدم حركات دائرية لطيفة بدلاً من الحركات الأفقية القوية التي قد تضر باللثة.</p>
+                    
+                    <p data-ar="4. لا تنس تنظيف اللسان للتخلص من البكتيريا المسببة لرائحة الفم الكريهة." data-en="4. Don't forget to clean your tongue to eliminate bacteria that cause bad breath.">4. لا تنس تنظيف اللسان للتخلص من البكتيريا المسببة لرائحة الفم الكريهة.</p>
+                    
+                    <h4 data-ar="نصائح إضافية مهمة:" data-en="Important Additional Tips:">نصائح إضافية مهمة:</h4>
+                    
+                    <p data-ar="• استخدم خيط الأسنان يومياً لإزالة بقايا الطعام من بين الأسنان." data-en="• Use dental floss daily to remove food debris between teeth.">• استخدم خيط الأسنان يومياً لإزالة بقايا الطعام من بين الأسنان.</p>
+                    
+                    <p data-ar="• استخدم غسول الفم المضاد للبكتيريا للحصول على حماية إضافية." data-en="• Use antibacterial mouthwash for additional protection.">• استخدم غسول الفم المضاد للبكتيريا للحصول على حماية إضافية.</p>
+                    
+                    <p data-ar="• قم بتغيير فرشاة الأسنان كل 3-4 أشهر أو عند تآكل الشعيرات." data-en="• Replace your toothbrush every 3-4 months or when bristles wear out.">• قم بتغيير فرشاة الأسنان كل 3-4 أشهر أو عند تآكل الشعيرات.</p>
+                    
+                    <p data-ar="• زوروا طبيب الأسنان كل 6 أشهر للفحص الدوري والتنظيف المهني." data-en="• Visit your dentist every 6 months for regular checkups and professional cleaning.">• زوروا طبيب الأسنان كل 6 أشهر للفحص الدوري والتنظيف المهني.</p>
+                    
+                    <p data-ar="تذكروا أن العناية بالأسنان استثمار في صحتكم العامة، فالفم الصحي يساهم في الصحة العامة للجسم. لأي استفسارات إضافية، لا تترددوا في التواصل معنا." data-en="Remember that dental care is an investment in your overall health, as a healthy mouth contributes to overall body health. For any additional inquiries, don't hesitate to contact us.">تذكروا أن العناية بالأسنان استثمار في صحتكم العامة، فالفم الصحي يساهم في الصحة العامة للجسم. لأي استفسارات إضافية، لا تترددوا في التواصل معنا.</p>
+                </article>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="cta-button" onclick="showSection('contact')" data-ar="هل لديك سؤال؟ تواصل معنا" data-en="Have a Question? Contact Us">هل لديك سؤال؟ تواصل معنا</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-ar="© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب الأسنان. جميع الحقوق محفوظة." data-en="© 2025 Dr.J Dental Clinic - Dr. Justina Youssef Al-Tali Dental Clinic. All rights reserved.">© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب الأسنان. جميع الحقوق محفوظة.</p>
+            <p data-ar="مصممة بعناية لتقديم أفضل تجربة للمرضى" data-en="Carefully designed to provide the best patient experience">مصممة بعناية لتقديم أفضل تجربة للمرضى</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentLanguage = 'ar';
+        
+        // Navigation functions
+        function showSection(sectionName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionName);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Close mobile menu if open
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.remove('active');
+        }
+        
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+        
+        // Language toggle function
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const langButton = document.querySelector('.lang-toggle');
+            
+            if (currentLanguage === 'ar') {
+                // Switch to English
+                currentLanguage = 'en';
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                langButton.textContent = 'العربية';
+                updateContent('en');
+            } else {
+                // Switch to Arabic
+                currentLanguage = 'ar';
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                langButton.textContent = 'EN';
+                updateContent('ar');
+            }
+        }
+        
+        // Update content based on language
+        function updateContent(lang) {
+            const elements = document.querySelectorAll('[data-ar][data-en]');
+            elements.forEach(element => {
+                if (lang === 'ar') {
+                    element.textContent = element.getAttribute('data-ar');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+            
+            // Update placeholders
+            const placeholderElements = document.querySelectorAll('[data-ar-placeholder][data-en-placeholder]');
+            placeholderElements.forEach(element => {
+                if (lang === 'ar') {
+                    element.setAttribute('placeholder', element.getAttribute('data-ar-placeholder'));
+                } else {
+                    element.setAttribute('placeholder', element.getAttribute('data-en-placeholder'));
+                }
+            });
+            
+            // Update select options
+            const selectOptions = document.querySelectorAll('option[data-ar][data-en]');
+            selectOptions.forEach(option => {
+                if (lang === 'ar') {
+                    option.textContent = option.getAttribute('data-ar');
+                } else {
+                    option.textContent = option.getAttribute('data-en');
+                }
+            });
+        }
+        
+        // Handle booking form submission
+        function handleBooking(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const bookingData = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                date: formData.get('date'),
+                service: formData.get('service'),
+                notes: formData.get('notes')
+            };
+            
+            // Create WhatsApp message
+            const message = currentLanguage === 'ar' 
+                ? `مرحباً، أود حجز موعد:\n\nالاسم: ${bookingData.name}\nرقم الهاتف: ${bookingData.phone}\nالتاريخ المفضل: ${bookingData.date}\nنوع الخدمة: ${getServiceName(bookingData.service, 'ar')}\nملاحظات: ${bookingData.notes || 'لا توجد'}`
+                : `Hello, I would like to book an appointment:\n\nName: ${bookingData.name}\nPhone: ${bookingData.phone}\nPreferred Date: ${bookingData.date}\nService Type: ${getServiceName(bookingData.service, 'en')}\nNotes: ${bookingData.notes || 'None'}`;
+            
+            const whatsappUrl = `https://wa.me/962791234567?text=${encodeURIComponent(message)}`;
+            
+            // Show confirmation and redirect
+            const confirmMessage = currentLanguage === 'ar' 
+                ? 'سيتم توجيهك إلى الواتساب لإرسال طلب الحجز. هل تريد المتابعة؟'
+                : 'You will be redirected to WhatsApp to send the booking request. Do you want to continue?';
+            
+            if (confirm(confirmMessage)) {
+                window.open(whatsappUrl, '_blank');
+            }
+        }
+        
+        // Get service name in specified language
+        function getServiceName(serviceValue, lang) {
+            const services = {
+                'restoration': { ar: 'ترميمات تجميلية', en: 'Cosmetic Restorations' },
+                'crowns': { ar: 'جسور وتيجان وفينير', en: 'Bridges, Crowns & Veneers' },
+                'implants': { ar: 'زراعة الأسنان', en: 'Dental Implants' },
+                'root-canal': { ar: 'معالجة لبية', en: 'Root Canal Treatment' },
+                'orthodontics': { ar: 'تقويم الأسنان', en: 'Orthodontics' },
+                'extraction': { ar: 'قلع الأسنان', en: 'Tooth Extraction' },
+                'pediatric': { ar: 'علاج الأطفال', en: 'Pediatric Dentistry' },
+                'emergency': { ar: 'حالة طارئة', en: 'Emergency' }
+            };
+            
+            return services[serviceValue] ? services[serviceValue][lang] : serviceValue;
+        }
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set minimum date for booking to today
+            const dateInput = document.querySelector('input[name="date"]');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.setAttribute('min', today);
+            }
+            
+            // Handle clicks outside mobile menu to close it
+            document.addEventListener('click', function(event) {
+                const navMenu = document.getElementById('navMenu');
+                const mobileToggle = document.querySelector('.mobile-menu-toggle');
+                
+                if (!navMenu.contains(event.target) && !mobileToggle.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        // Smooth scrolling for better user experience
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(44, 90, 160, 0.95), rgba(74, 144, 226, 0.95))';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #2c5aa0, #4a90e2)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
