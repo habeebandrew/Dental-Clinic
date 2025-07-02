@@ -1481,20 +1481,20 @@
         }
         
         // Close modal when clicking outside the image
-        document.addEventListener('click', function(event) {
-            const modal = document.getElementById('imageModal');
-            if (event.target === modal) {
-                closeImageModal();
-            }
-        });
+        document.getElementById('imageModal').addEventListener('click', function(event) {
+                    const modal = document.getElementById('imageModal');
+                    if (event.target === modal) {
+                        closeImageModal();
+                    }
+                });
         
         // Add touch support for mobile devices
-        document.addEventListener('touchstart', function(event) {
-            const modal = document.getElementById('imageModal');
-            if (event.target === modal) {
-                closeImageModal();
-            }
-        });
+        document.getElementById('imageModal').addEventListener('touchstart', function(event) {
+                    const modal = document.getElementById('imageModal');
+                    if (event.target === modal) {
+                        closeImageModal();
+                    }
+                });
         
         // Image handling functions
         function handleImageError(img) {
