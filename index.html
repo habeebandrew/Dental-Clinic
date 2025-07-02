@@ -340,6 +340,378 @@
             transform: scale(1.05);
         }
 
+        /* Gallery Treatments - New Responsive Image Cards */
+        .gallery-treatments {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery-image {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+
+        /* Image placeholder for failed loads */
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: #e9ecef;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Loading state for images */
+        .gallery-image img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-image img[loading="lazy"].loaded {
+            opacity: 1;
+        }
+
+        .gallery-card:hover .gallery-image img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(44, 90, 160, 0.8), rgba(74, 144, 226, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-icon {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .gallery-content {
+            padding: 1.5rem;
+        }
+
+        .gallery-content h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .gallery-content p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Gallery */
+        @media (max-width: 1200px) {
+            .gallery-treatments {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-treatments {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .gallery-image {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-treatments {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .gallery-image {
+                height: 200px;
+            }
+            
+            .gallery-content {
+                padding: 1rem;
+            }
+            
+            .gallery-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .gallery-content p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-treatments {
+                gap: 1rem;
+            }
+            
+            .gallery-image {
+                height: 180px;
+            }
+            
+            .gallery-content {
+                padding: 0.8rem;
+            }
+            
+            .gallery-icon {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* High DPI screens optimization */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .gallery-image img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Image Modal Styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .image-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .modal-image {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            /* Ensure image maintains aspect ratio */
+            display: block;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .modal-info {
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+            right: 0;
+            color: white;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-info h3 {
+            margin-bottom: 0.5rem;
+            color: #87ceeb;
+        }
+
+        /* Enhanced Gallery Image Styles */
+        .gallery-image {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: all 0.3s ease;
+            display: block;
+            /* Ensure images are always properly sized */
+            min-width: 100%;
+            min-height: 100%;
+            max-width: none;
+            max-height: none;
+        }
+
+        .gallery-card:hover .gallery-image img {
+            transform: scale(1.1);
+        }
+
+        /* Zoom indicator */
+        .zoom-indicator {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .gallery-card:hover .zoom-indicator {
+            opacity: 1;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Mobile modal adjustments */
+        @media (max-width: 768px) {
+            .modal-content {
+                max-width: 95%;
+                max-height: 85%;
+                margin: 2rem auto;
+            }
+            
+            .modal-close {
+                top: -35px;
+                font-size: 1.5rem;
+                width: 35px;
+                height: 35px;
+            }
+            
+            .modal-info {
+                bottom: -50px;
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .modal-image {
+                max-width: 100%;
+                max-height: 70vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-content {
+                max-width: 98%;
+                max-height: 80%;
+                margin: 1rem auto;
+            }
+            
+            .modal-close {
+                top: -30px;
+                font-size: 1.3rem;
+                width: 30px;
+                height: 30px;
+            }
+            
+            .modal-info {
+                bottom: -45px;
+                padding: 0.6rem;
+                font-size: 0.8rem;
+            }
+            
+            .modal-image {
+                max-height: 60vh;
+            }
+        }
+
         /* Blog */
         .blog-post {
             background: white;
@@ -402,7 +774,8 @@
 
             .cards-grid,
             .services-grid,
-            .hours-grid {
+            .hours-grid,
+            .gallery-treatments {
                 grid-template-columns: 1fr;
             }
         }
@@ -690,21 +1063,141 @@
             </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section id="gallery" class="section">
-            <div class="container">
-                <h2 data-ar="معرض الصور" data-en="Gallery">معرض الصور</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-ar="صورة العيادة الخارجية" data-en="Clinic Exterior">صورة العيادة الخارجية</div>
-                    <div class="gallery-item" data-ar="غرفة الاستقبال" data-en="Reception Area">غرفة الاستقبال</div>
-                    <div class="gallery-item" data-ar="غرفة العلاج الرئيسية" data-en="Main Treatment Room">غرفة العلاج الرئيسية</div>
-                    <div class="gallery-item" data-ar="الأجهزة الطبية" data-en="Medical Equipment">الأجهزة الطبية</div>
-                    <div class="gallery-item" data-ar="قبل وبعد - الحالة 1" data-en="Before & After - Case 1">قبل وبعد - الحالة 1</div>
-                    <div class="gallery-item" data-ar="قبل وبعد - الحالة 2" data-en="Before & After - Case 2">قبل وبعد - الحالة 2</div>
-                    <div class="gallery-item" data-ar="قبل وبعد - الحالة 3" data-en="Before & After - Case 3">قبل وبعد - الحالة 3</div>
-                    <div class="gallery-item" data-ar="منطقة التعقيم" data-en="Sterilization Area">منطقة التعقيم</div>
+     <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 data-ar="معرض أعمالنا" data-en="Our Work Gallery">معرض أعمالنا</h2>
+            <div class="gallery-treatments">
+                
+                <!-- Pediatric Dentistry -->
+                <div class="gallery-card">
+                    <div class="gallery-image" onclick="openImageModal(this)">
+                        <img src="طب أسنان الأطفال.jpg" alt="Pediatric Dentistry" data-ar-alt="طب أسنان الأطفال" data-en-alt="Pediatric Dentistry">
+                        <div class="image-placeholder">
+                            <span data-ar="طب أسنان الأطفال" data-en="Pediatric Dentistry">طب أسنان الأطفال</span>
+                        </div>
+                        <div class="zoom-indicator">🔍</div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon">👶</div>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 data-ar="طب أسنان الأطفال" data-en="Pediatric Dentistry">طب أسنان الأطفال</h3>
+                        <p data-ar="التواصل اللطيف مع الطفل وجعله يتعامل بإيجابية مع المعالجة" data-en="Gentle conversations and connection with the child, making him/her act positively during treatment">التواصل اللطيف مع الطفل وجعله يتعامل بإيجابية مع المعالجة</p>
+                    </div>
                 </div>
+
+                <!-- Cleaning and Scaling -->
+                <div class="gallery-card">
+                    <div class="gallery-image" onclick="openImageModal(this)">
+                        <img src="تنظيف و تقليح .jpg" alt="Cleaning and Scaling" data-ar-alt="تنظيف وتقليح الأسنان" data-en-alt="Cleaning and Scaling">
+                        <div class="image-placeholder">
+                            <span data-ar="تنظيف وتقليح الأسنان" data-en="Cleaning and Scaling">تنظيف وتقليح الأسنان</span>
+                        </div>
+                        <div class="zoom-indicator">🔍</div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon">✨</div>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 data-ar="تنظيف وتقليح الأسنان" data-en="Cleaning and Scaling">تنظيف وتقليح الأسنان</h3>
+                        <p data-ar="أولى خطوات المعالجة الناجحة تكون من خلال الحصول على بيئة فموية صحية" data-en="First step for successful treatment is gaining clean oral environment">أولى خطوات المعالجة الناجحة تكون من خلال الحصول على بيئة فموية صحية</p>
+                    </div>
+                </div>
+
+                <!-- Endodontic Treatment -->
+                <div class="gallery-card">
+                    <div class="gallery-image" onclick="openImageModal(this)">
+                        <img src="معالجات لبية.jpg" alt="Endodontic Treatment" data-ar-alt="معالجات لبية" data-en-alt="Endodontic Treatment">
+                        <div class="image-placeholder">
+                            <span data-ar="معالجات لبية" data-en="Endodontic Treatment">معالجات لبية</span>
+                        </div>
+                        <div class="zoom-indicator">🔍</div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon">⚕️</div>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 data-ar="معالجات لبية" data-en="Endodontic Treatment">معالجات لبية</h3>
+                        <p data-ar="التخلص من الألم الشديد الذي يجعلك لا تنام ليلاً، الحل بأفضل التقنيات ضمن عيادتنا وبالطبع بخبرة مميزة" data-en="To get rid of severe pain that prevents you from sleeping, solution is here in our clinic with the best techniques, tools and for sure best experience">التخلص من الألم الشديد الذي يجعلك لا تنام ليلاً، الحل بأفضل التقنيات ضمن عيادتنا وبالطبع بخبرة مميزة</p>
+                    </div>
+                </div>
+
+                <!-- Extraction -->
+                <div class="gallery-card">
+                    <div class="gallery-image" onclick="openImageModal(this)">
+                        <img src="قلع الأسنان.jpg" alt="Tooth Extraction" data-ar-alt="قلع الأسنان" data-en-alt="Tooth Extraction">
+                        <div class="image-placeholder">
+                            <span data-ar="قلع الأسنان" data-en="Tooth Extraction">قلع الأسنان</span>
+                        </div>
+                        <div class="zoom-indicator">🔍</div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon">🔧</div>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 data-ar="قلع الأسنان" data-en="Extraction">قلع الأسنان</h3>
+                        <p data-ar="سن استطبابه القلع وتريد التخدير دون الخوف من الآلام التالية للمعالجة" data-en="A hopeless tooth that is indicated for extraction with painless anesthesia">سن استطبابه القلع وتريد التخدير دون الخوف من الآلام التالية للمعالجة</p>
+                    </div>
+                </div>
+
+                <!-- Dental Restorations -->
+                <div class="gallery-card">
+                    <div class="gallery-image" onclick="openImageModal(this)">
+                        <img src="ترميمات تجميلية.jpg" alt="Dental Restorations" data-ar-alt="ترميمات تجميلية" data-en-alt="Dental Restorations">
+                        <div class="image-placeholder">
+                            <span data-ar="ترميمات تجميلية" data-en="Dental Restorations">ترميمات تجميلية</span>
+                        </div>
+                        <div class="zoom-indicator">🔍</div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon">💎</div>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 data-ar="ترميمات تجميلية" data-en="Dental Restorations">ترميمات تجميلية</h3>
+                        <p data-ar="لدى وجود أي نخر - كسر - عيب في الأسنان حجماً، شكلاً وتريد مظهر جمالي ووظيفي، نقدم أفضل الترميمات" data-en="Caries - cracks - defect in shape, size and you want aesthetic and functional restoration, contact us">لدى وجود أي نخر - كسر - عيب في الأسنان حجماً، شكلاً وتريد مظهر جمالي ووظيفي، نقدم أفضل الترميمات</p>
+                    </div>
+                </div>
+
+                <!-- Implants -->
+                <div class="gallery-card">
+                    <div class="gallery-image" onclick="openImageModal(this)">
+                        <img src="جراحة و زرع الأسنان .jpg" alt="Dental Implants" data-ar-alt="جراحة وزرع الأسنان" data-en-alt="Dental Implants">
+                        <div class="image-placeholder">
+                            <span data-ar="جراحة وزرع الأسنان" data-en="Dental Implants">جراحة وزرع الأسنان</span>
+                        </div>
+                        <div class="zoom-indicator">🔍</div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon">🦷</div>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 data-ar="جراحة وزرع الأسنان" data-en="Implants">جراحة وزرع الأسنان</h3>
+                        <p data-ar="سن أو أسنان مفقودة ومظهر غير جمالي، أفضل حل أمامك وهو زراعة الأسنان وبأفضل أنواع الزرعات والتقنيات" data-en="Tooth or teeth loss, non-aesthetic appearance, best solution is in front of you! Implants! With best implants and techniques">سن أو أسنان مفقودة ومظهر غير جمالي، أفضل حل أمامك وهو زراعة الأسنان وبأفضل أنواع الزرعات والتقنيات</p>
+                    </div>
+                </div>
+
+                <!-- Orthodontic Treatment -->
+                <div class="gallery-card">
+                    <div class="gallery-image" onclick="openImageModal(this)">
+                        <img src="تقويم الأسنان .jpg" alt="Orthodontic Treatment" data-ar-alt="تقويم الأسنان" data-en-alt="Orthodontic Treatment">
+                        <div class="image-placeholder">
+                            <span data-ar="تقويم الأسنان" data-en="Orthodontic Treatment">تقويم الأسنان</span>
+                        </div>
+                        <div class="zoom-indicator">🔍</div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon">📐</div>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 data-ar="تقويم الأسنان" data-en="Orthodontic Treatment">تقويم الأسنان</h3>
+                        <p data-ar="لديك أسنان مزدحمة أو فراغات في أسنانك، بعض الأسنان لم تظهر بعد! نوفر لك جميع أنواع الأجهزة التقويمية المتحركة والثابتة" data-en="Spaces between your teeth, impacted teeth, we offer all types of orthodontic braces (removable, fixed, ...)">لديك أسنان مزدحمة أو فراغات في أسنانك، بعض الأسنان لم تظهر بعد! نوفر لك جميع أنواع الأجهزة التقويمية المتحركة والثابتة</p>
+                    </div>
+                </div>
+
             </div>
+            
+      
         </section>
 
         <!-- Blog Section -->
@@ -747,6 +1240,18 @@
             </div>
         </section>
     </main>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeImageModal()">&times;</button>
+            <img id="modalImage" class="modal-image" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
 
    <!-- Footer -->
 <footer>
@@ -848,6 +1353,16 @@
                     option.textContent = option.getAttribute('data-en');
                 }
             });
+            
+            // Update image placeholders
+            const imagePlaceholders = document.querySelectorAll('.image-placeholder span[data-ar][data-en]');
+            imagePlaceholders.forEach(placeholder => {
+                if (lang === 'ar') {
+                    placeholder.textContent = placeholder.getAttribute('data-ar');
+                } else {
+                    placeholder.textContent = placeholder.getAttribute('data-en');
+                }
+            });
         }
         
         // Handle booking form submission
@@ -896,6 +1411,150 @@
             return services[serviceValue] ? services[serviceValue][lang] : serviceValue;
         }
         
+        // Image preview function
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                const preview = document.getElementById('imagePreview');
+                const previewImg = document.getElementById('previewImg');
+                
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    preview.style.display = 'block';
+                    
+                    // Show instructions for adding the image
+                    const instructions = currentLanguage === 'ar' 
+                        ? 'تم تحميل الصورة بنجاح! لإضافتها بشكل دائم، يرجى حفظ الصورة في مجلد المشروع وتحديث الكود.'
+                        : 'Image loaded successfully! To add it permanently, please save the image to the project folder and update the code.';
+                    
+                    setTimeout(() => {
+                        alert(instructions);
+                    }, 500);
+                };
+                
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        
+        // Image modal functions
+        function openImageModal(galleryImageElement) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            
+            // Get image source and info
+            const img = galleryImageElement.querySelector('img');
+            const galleryCard = galleryImageElement.closest('.gallery-card');
+            const title = galleryCard.querySelector('.gallery-content h3');
+            const description = galleryCard.querySelector('.gallery-content p');
+            
+            if (img && img.src && !img.src.includes('placeholder')) {
+                // Set modal content
+                modalImage.src = img.src;
+                modalImage.alt = img.alt;
+                modalTitle.textContent = title ? title.textContent : '';
+                modalDescription.textContent = description ? description.textContent : '';
+                
+                // Show modal
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                
+                // Add keyboard event listener for ESC key
+                document.addEventListener('keydown', handleModalKeydown);
+            }
+        }
+        
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+            
+            // Remove keyboard event listener
+            document.removeEventListener('keydown', handleModalKeydown);
+        }
+        
+        function handleModalKeydown(event) {
+            if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        }
+        
+        // Close modal when clicking outside the image
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeImageModal();
+            }
+        });
+        
+        // Add touch support for mobile devices
+        document.addEventListener('touchstart', function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeImageModal();
+            }
+        });
+        
+        // Image handling functions
+        function handleImageError(img) {
+            // If image fails to load, show a placeholder
+            img.style.display = 'none';
+            const placeholder = img.parentElement.querySelector('.image-placeholder');
+            if (placeholder) {
+                placeholder.style.display = 'flex';
+            } else {
+                // Create placeholder if it doesn't exist
+                const newPlaceholder = document.createElement('div');
+                newPlaceholder.className = 'image-placeholder';
+                newPlaceholder.style.cssText = `
+                    width: 100%;
+                    height: 100%;
+                    background: #e9ecef;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #6c757d;
+                    font-size: 1rem;
+                `;
+                newPlaceholder.textContent = currentLanguage === 'ar' ? 'صورة غير متوفرة' : 'Image not available';
+                img.parentElement.appendChild(newPlaceholder);
+            }
+        }
+
+        function optimizeImages() {
+            // Get all gallery images and optimize them
+            const galleryImages = document.querySelectorAll('.gallery-image img');
+            galleryImages.forEach(img => {
+                // Add error handling
+                img.onerror = function() {
+                    handleImageError(this);
+                };
+                
+                // Add load success handling
+                img.onload = function() {
+                    this.classList.add('loaded');
+                    // Ensure proper sizing after load
+                    this.style.objectFit = 'cover';
+                    this.style.objectPosition = 'center';
+                };
+                
+                // Add loading attribute for better performance
+                img.loading = 'lazy';
+                
+                // Ensure images maintain aspect ratio
+                img.style.objectFit = 'cover';
+                img.style.objectPosition = 'center';
+                
+                // If image is already loaded (cached), add loaded class
+                if (img.complete && img.naturalHeight !== 0) {
+                    img.classList.add('loaded');
+                    img.style.objectFit = 'cover';
+                    img.style.objectPosition = 'center';
+                }
+            });
+        }
+
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
             // Set minimum date for booking to today
@@ -904,6 +1563,9 @@
                 const today = new Date().toISOString().split('T')[0];
                 dateInput.setAttribute('min', today);
             }
+            
+            // Optimize images
+            optimizeImages();
             
             // Handle clicks outside mobile menu to close it
             document.addEventListener('click', function(event) {
