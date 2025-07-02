@@ -1,5 +1,4 @@
-# Dr.J Dental Clinic - عيادة د. جوستينا لطب الأسنان
-
+# Dr.Jostiena Dental Clinic -
 ## Description
 
 This is a single-page website for Dr.J Dental Clinic, offering dental services with high standards of quality and professionalism. The site is bilingual (Arabic and English) and provides information about the clinic, its services, working hours, contact details, and a gallery. It also includes a blog with articles related to dental health.
