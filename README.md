@@ -120,6 +120,8 @@ dr.joss/
 - سرعة تحميل عالية
 
 ## كيفية الاستخدام | How to Use
+بامكانك مشاهدة النتيجة عبر الرابط التالي**
+`https://drjostiena.vercel.app/#`
 
 ### 🚀 **التشغيل المحلي | Local Development**
 
@@ -145,21 +147,6 @@ dr.joss/
 
 3. **الوصول للموقع | Access Website**
    - افتح المتصفح وانتقل إلى `http://localhost:8000/pages/`
-
-
-## التخصيص | Customization
-
-### 🎨 **تعديل الألوان | Color Customization**
-```css
-/* في ملف assets/css/style.css */
-:root {
-    --primary-color: #2c5aa0;
-    --secondary-color: #4a90e2;
-    --accent-color: #ff6b6b;
-    --text-color: #333;
-    --background-color: #f8f9fa;
-}
-```
 
 
 ## المتطلبات التقنية | Technical Requirements
