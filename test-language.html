@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار نظام اللغة - Language System Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            background: #f8f9fa;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .test-header {
+            background: linear-gradient(135deg, #2c5aa0, #4a90e2);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .lang-toggle {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+        .test-section {
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .status {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        .links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        .links a {
+            background: #4a90e2;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        .links a:hover {
+            background: #2c5aa0;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1 data-ar="اختبار نظام اللغة" data-en="Language System Test">اختبار نظام اللغة</h1>
+            <p data-ar="هذه الصفحة لاختبار عمل نظام حفظ اللغة" data-en="This page is for testing the language persistence system">هذه الصفحة لاختبار عمل نظام حفظ اللغة</p>
+        </div>
+
+        <div class="test-section">
+            <h2 data-ar="التحكم في اللغة" data-en="Language Control">التحكم في اللغة</h2>
+            <button class="lang-toggle" onclick="toggleLanguage()" data-ar="تبديل إلى الإنجليزية" data-en="Switch to Arabic">تبديل إلى الإنجليزية</button>
+            
+            <div class="status info">
+                <strong data-ar="اللغة الحالية:" data-en="Current Language:">اللغة الحالية:</strong>
+                <span id="current-lang">العربية</span>
+            </div>
+            
+            <div class="status info">
+                <strong data-ar="اللغة المحفوظة:" data-en="Saved Language:">اللغة المحفوظة:</strong>
+                <span id="saved-lang">-</span>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2 data-ar="اختبار النصوص" data-en="Text Testing">اختبار النصوص</h2>
+            <p data-ar="هذا نص تجريبي باللغة العربية لاختبار تبديل اللغات." data-en="This is a test text in English to test language switching.">هذا نص تجريبي باللغة العربية لاختبار تبديل اللغات.</p>
+            
+            <form>
+                <label data-ar="الاسم:" data-en="Name:">الاسم:</label>
+                <input type="text" placeholder="" data-ar-placeholder="أدخل اسمك هنا" data-en-placeholder="Enter your name here">
+                
+                <br><br>
+                
+                <label data-ar="الخدمة:" data-en="Service:">الخدمة:</label>
+                <select>
+                    <option data-ar="اختر الخدمة" data-en="Select Service">اختر الخدمة</option>
+                    <option data-ar="ترميمات تجميلية" data-en="Cosmetic Restorations">ترميمات تجميلية</option>
+                    <option data-ar="زراعة الأسنان" data-en="Dental Implants">زراعة الأسنان</option>
+                </select>
+            </form>
+        </div>
+
+        <div class="test-section">
+            <h2 data-ar="اختبار التنقل" data-en="Navigation Test">اختبار التنقل</h2>
+            <p data-ar="انقر على الروابط التالية للانتقال بين الصفحات واختبار حفظ اللغة:" data-en="Click the following links to navigate between pages and test language persistence:">انقر على الروابط التالية للانتقال بين الصفحات واختبار حفظ اللغة:</p>
+            
+            <div class="links">
+                <a href="pages/index.html" data-ar="الصفحة الرئيسية" data-en="Home Page">الصفحة الرئيسية</a>
+                <a href="pages/about.html" data-ar="من نحن" data-en="About Us">من نحن</a>
+                <a href="pages/services.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
+                <a href="pages/contact.html" data-ar="التواصل" data-en="Contact">التواصل</a>
+                <a href="pages/gallery.html" data-ar="المعرض" data-en="Gallery">المعرض</a>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2 data-ar="تعليمات الاختبار" data-en="Test Instructions">تعليمات الاختبار</h2>
+            <ol>
+                <li data-ar="غيّر اللغة باستخدام الزر أعلاه" data-en="Change language using the button above">غيّر اللغة باستخدام الزر أعلاه</li>
+                <li data-ar="انتقل إلى صفحة أخرى باستخدام الروابط" data-en="Navigate to another page using the links">انتقل إلى صفحة أخرى باستخدام الروابط</li>
+                <li data-ar="تحقق من أن اللغة محفوظة في الصفحة الجديدة" data-en="Check that the language is preserved in the new page">تحقق من أن اللغة محفوظة في الصفحة الجديدة</li>
+                <li data-ar="ارجع إلى هذه الصفحة وتحقق من اللغة" data-en="Return to this page and check the language">ارجع إلى هذه الصفحة وتحقق من اللغة</li>
+            </ol>
+        </div>
+
+        <div class="status success">
+            <strong data-ar="ملاحظة:" data-en="Note:">ملاحظة:</strong>
+            <span data-ar="إذا كانت اللغة محفوظة بشكل صحيح، فسترى نفس اللغة في جميع الصفحات." data-en="If the language is saved correctly, you will see the same language across all pages.">إذا كانت اللغة محفوظة بشكل صحيح، فسترى نفس اللغة في جميع الصفحات.</span>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Update language display
+        function updateLanguageDisplay() {
+            const currentLang = getCurrentLanguage();
+            const savedLang = localStorage.getItem('drj-clinic-language');
+            
+            document.getElementById('current-lang').textContent = currentLang === 'ar' ? 'العربية' : 'English';
+            document.getElementById('saved-lang').textContent = savedLang === 'ar' ? 'العربية' : 'English';
+        }
+
+        // Listen for language changes
+        document.addEventListener('languageChanged', updateLanguageDisplay);
+        
+        // Initial update
+        setTimeout(updateLanguageDisplay, 100);
+    </script>
+</body>
+</html>

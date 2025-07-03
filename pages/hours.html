@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ساعات العمل - Dr.J Dental Clinic</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div>Dr.J Dental Clinic</div>
+                <div style="font-size: 0.8rem; font-weight: normal;">عيادة د. جوستينا لطب الأسنان</div>
+            </div>
+            
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+                <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                <li><a href="hours.html" class="active" data-ar="ساعات العمل" data-en="Hours">ساعات العمل</a></li>
+                <li><a href="contact.html" data-ar="الحجز والتواصل" data-en="Contact">الحجز والتواصل</a></li>
+                <li><a href="gallery.html" data-ar="المعرض" data-en="Gallery">المعرض</a></li>
+                <li><a href="blog.html" data-ar="المدونة" data-en="Blog">المدونة</a></li>
+            </ul>
+            
+            <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 data-ar="ساعات العمل" data-en="Working Hours">ساعات العمل</h1>
+                <p data-ar="تعرف على أوقات دوام العيادة والخدمات المتاحة" data-en="Learn about clinic hours and available services">تعرف على أوقات دوام العيادة والخدمات المتاحة</p>
+            </div>
+        </section>
+
+        <!-- Working Hours Section -->
+        <section class="hours-section">
+            <div class="container">
+                <div class="hours-grid">
+                    <div class="hours-card main-hours">
+                        <div class="hours-header">
+                            <div class="hours-icon">🕐</div>
+                            <h3 data-ar="أوقات الدوام الأساسية" data-en="Main Working Hours">أوقات الدوام الأساسية</h3>
+                        </div>
+                        <div class="hours-content">
+                            <div class="time-slot">
+                                <div class="time-period">
+                                    <span class="period-icon">🌅</span>
+                                    <span class="period-name" data-ar="الفترة الصباحية" data-en="Morning Session">الفترة الصباحية</span>
+                                </div>
+                                <div class="time-range" data-ar="9:00 ص - 2:00 ظ" data-en="9:00 AM - 2:00 PM">9:00 ص - 2:00 ظ</div>
+                            </div>
+                            <div class="time-slot">
+                                <div class="time-period">
+                                    <span class="period-icon">🌆</span>
+                                    <span class="period-name" data-ar="الفترة المسائية" data-en="Evening Session">الفترة المسائية</span>
+                                </div>
+                                <div class="time-range" data-ar="4:00 ع - 9:30 م" data-en="4:00 PM - 9:30 PM">4:00 ع - 9:30 م</div>
+                            </div>
+                            <div class="extended-hours">
+                                <p data-ar="أو حتى 10:00 مساءً حسب الحاجة" data-en="Or until 10:00 PM as needed">أو حتى 10:00 مساءً حسب الحاجة</p>
+                            </div>
+                            <div class="closed-day">
+                                <span class="closed-icon">🚫</span>
+                                <span data-ar="مغلق يوم الأحد" data-en="Closed on Sundays">مغلق يوم الأحد</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hours-card special-services">
+                        <div class="hours-header">
+                            <div class="hours-icon">📐</div>
+                            <h3 data-ar="خدمات خاصة" data-en="Special Services">خدمات خاصة</h3>
+                        </div>
+                        <div class="hours-content">
+                            <div class="special-service">
+                                <div class="service-name" data-ar="معالجات تقويمية" data-en="Orthodontic Treatments">معالجات تقويمية</div>
+                                <div class="service-days" data-ar="الإثنين والأربعاء فقط" data-en="Mondays and Wednesdays only">الإثنين والأربعاء فقط</div>
+                            </div>
+                            <div class="special-service">
+                                <div class="service-name" data-ar="الحالات الطارئة" data-en="Emergency Cases">الحالات الطارئة</div>
+                                <div class="service-availability" data-ar="مرحب بها دائماً" data-en="Always welcome">مرحب بها دائماً</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hours-card important-info">
+                        <div class="hours-header">
+                            <div class="hours-icon">ℹ️</div>
+                            <h3 data-ar="معلومات مهمة" data-en="Important Information">معلومات مهمة</h3>
+                        </div>
+                        <div class="hours-content">
+                            <ul class="info-list">
+                                <li>
+                                    <span class="info-icon">📅</span>
+                                    <span data-ar="الحجز المسبق مطلوب" data-en="Prior appointment required">الحجز المسبق مطلوب</span>
+                                </li>
+                                <li>
+                                    <span class="info-icon">🚗</span>
+                                    <span data-ar="لا توجد مواقف سيارات خاصة" data-en="No private parking available">لا توجد مواقف سيارات خاصة</span>
+                                </li>
+                                <li>
+                                    <span class="info-icon">⏰</span>
+                                    <span data-ar="يُرجى الحضور قبل 10 دقائق من الموعد" data-en="Please arrive 10 minutes before appointment">يُرجى الحضور قبل 10 دقائق من الموعد</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weekly Schedule -->
+        <section class="weekly-schedule">
+            <div class="container">
+                <h2 data-ar="الجدول الأسبوعي" data-en="Weekly Schedule">الجدول الأسبوعي</h2>
+                <div class="schedule-table">
+                    <div class="schedule-header">
+                        <div class="day-header" data-ar="اليوم" data-en="Day">اليوم</div>
+                        <div class="time-header" data-ar="الفترة الصباحية" data-en="Morning">الفترة الصباحية</div>
+                        <div class="time-header" data-ar="الفترة المسائية" data-en="Evening">الفترة المسائية</div>
+                        <div class="service-header" data-ar="خدمات خاصة" data-en="Special Services">خدمات خاصة</div>
+                    </div>
+                    
+                    <div class="schedule-row">
+                        <div class="day-cell" data-ar="الإثنين" data-en="Monday">الإثنين</div>
+                        <div class="time-cell" data-ar="9:00 ص - 2:00 ظ" data-en="9:00 AM - 2:00 PM">9:00 ص - 2:00 ظ</div>
+                        <div class="time-cell" data-ar="4:00 ع - 9:30 م" data-en="4:00 PM - 9:30 PM">4:00 ع - 9:30 م</div>
+                        <div class="service-cell orthodontic" data-ar="تقويم الأسنان" data-en="Orthodontics">تقويم الأسنان</div>
+                    </div>
+                    
+                    <div class="schedule-row">
+                        <div class="day-cell" data-ar="الثلاثاء" data-en="Tuesday">الثلاثاء</div>
+                        <div class="time-cell" data-ar="9:00 ص - 2:00 ظ" data-en="9:00 AM - 2:00 PM">9:00 ص - 2:00 ظ</div>
+                        <div class="time-cell" data-ar="4:00 ع - 9:30 م" data-en="4:00 PM - 9:30 PM">4:00 ع - 9:30 م</div>
+                        <div class="service-cell general" data-ar="جميع الخدمات" data-en="All Services">جميع الخدمات</div>
+                    </div>
+                    
+                    <div class="schedule-row">
+                        <div class="day-cell" data-ar="الأربعاء" data-en="Wednesday">الأربعاء</div>
+                        <div class="time-cell" data-ar="9:00 ص - 2:00 ظ" data-en="9:00 AM - 2:00 PM">9:00 ص - 2:00 ظ</div>
+                        <div class="time-cell" data-ar="4:00 ع - 9:30 م" data-en="4:00 PM - 9:30 PM">4:00 ع - 9:30 م</div>
+                        <div class="service-cell orthodontic" data-ar="تقويم الأسنا��" data-en="Orthodontics">تقويم الأسنان</div>
+                    </div>
+                    
+                    <div class="schedule-row">
+                        <div class="day-cell" data-ar="الخميس" data-en="Thursday">الخميس</div>
+                        <div class="time-cell" data-ar="9:00 ص - 2:00 ظ" data-en="9:00 AM - 2:00 PM">9:00 ص - 2:00 ظ</div>
+                        <div class="time-cell" data-ar="4:00 ع - 9:30 م" data-en="4:00 PM - 9:30 PM">4:00 ع - 9:30 م</div>
+                        <div class="service-cell general" data-ar="جميع الخدمات" data-en="All Services">جميع الخدمات</div>
+                    </div>
+                    
+                    <div class="schedule-row">
+                        <div class="day-cell" data-ar="الجمعة" data-en="Friday">الجمعة</div>
+                        <div class="time-cell" data-ar="9:00 ص - 2:00 ظ" data-en="9:00 AM - 2:00 PM">9:00 ص - 2:00 ظ</div>
+                        <div class="time-cell" data-ar="4:00 ع - 9:30 م" data-en="4:00 PM - 9:30 PM">4:00 ع - 9:30 م</div>
+                        <div class="service-cell general" data-ar="جميع الخدمات" data-en="All Services">جميع الخدمات</div>
+                    </div>
+                    
+                    <div class="schedule-row">
+                        <div class="day-cell" data-ar="السبت" data-en="Saturday">السبت</div>
+                        <div class="time-cell" data-ar="9:00 ص - 2:00 ظ" data-en="9:00 AM - 2:00 PM">9:00 ص - 2:00 ظ</div>
+                        <div class="time-cell" data-ar="4:00 ع - 9:30 م" data-en="4:00 PM - 9:30 PM">4:00 ع - 9:30 م</div>
+                        <div class="service-cell general" data-ar="جميع الخدمات" data-en="All Services">جميع الخدمات</div>
+                    </div>
+                    
+                    <div class="schedule-row closed">
+                        <div class="day-cell" data-ar="الأحد" data-en="Sunday">الأحد</div>
+                        <div class="time-cell closed-cell" data-ar="مغلق" data-en="Closed">مغلق</div>
+                        <div class="time-cell closed-cell" data-ar="مغلق" data-en="Closed">مغلق</div>
+                        <div class="service-cell emergency" data-ar="طوارئ فقط" data-en="Emergency Only">طوارئ فقط</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Contact -->
+        <section class="emergency-contact">
+            <div class="container">
+                <div class="emergency-card">
+                    <div class="emergency-icon">🚨</div>
+                    <div class="emergency-content">
+                        <h2 data-ar="حالات الطوارئ" data-en="Emergency Cases">حالات الطوارئ</h2>
+                        <p data-ar="في حالة الطوارئ، نحن متاحون للتواصل على مدار الساعة" data-en="In case of emergency, we are available for contact 24/7">في حالة الطوارئ، نحن متاحون للتواصل على مدار الساعة</p>
+                        <div class="emergency-info">
+                            <div class="emergency-phone">
+                                <span class="phone-icon">📞</span>
+                                <span class="phone-number">+963 938 289 397</span>
+                            </div>
+                            <div class="emergency-note">
+                                <p data-ar="متاح للمكالمات والواتساب" data-en="Available for calls and WhatsApp">متاح للمكالمات والواتساب</p>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="emergency-btn" data-ar="اتصل الآن" data-en="Call Now">اتصل الآن</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Tips -->
+        <section class="booking-tips">
+            <div class="container">
+                <h2 data-ar="نصائح للحجز" data-en="Booking Tips">نصائح للحجز</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">📅</div>
+                        <h3 data-ar="احجز مسبقاً" data-en="Book in Advance">احجز مسبقاً</h3>
+                        <p data-ar="ننصح بالحجز قبل 2-3 أيام لضمان الحصول على الموعد المناسب" data-en="We recommend booking 2-3 days in advance to ensure getting a suitable appointment">ننصح بالحجز قبل 2-3 أيام لضمان الحصول على الموعد المناسب</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">⏰</div>
+                        <h3 data-ar="الوصول المبكر" data-en="Early Arrival">الوصول المبكر</h3>
+                        <p data-ar="يُرجى الحضور قبل 10 دقائق من موعدكم لإنهاء الإجراءات" data-en="Please arrive 10 minutes before your appointment to complete procedures">يُرجى الحضور قبل 10 دقائق من موعدكم لإنهاء الإجراءات</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">📱</div>
+                        <h3 data-ar="تأكيد الموعد" data-en="Confirm Appointment">تأكيد الموعد</h3>
+                        <p data-ar="سنتواصل معكم قبل يوم من الموعد لتأكيد الحضور" data-en="We will contact you one day before the appointment to confirm attendance">سنتواصل معكم قبل يوم من الموعد لتأكيد الحضور</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🚗</div>
+                        <h3 data-ar="المواصلات" data-en="Transportation">المواصلات</h3>
+                        <p data-ar="لا توجد مواقف خاصة، يُرجى التخطيط للمواصلات مسبقاً" data-en="No private parking available, please plan transportation in advance">لا توجد مواقف خاصة، يُرجى التخطيط للمواصلات مسبقاً</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 data-ar="جاهز لحجز موعدك؟" data-en="Ready to Book Your Appointment?">جاهز لحجز موعدك؟</h2>
+                <p data-ar="تواصل معنا الآن لحجز موعدك في الوقت المناسب لك" data-en="Contact us now to book your appointment at a time that suits you">تواصل معنا الآن لحجز موعدك في الوقت المناسب لك</p>
+                <a href="contact.html" class="cta-button" data-ar="احجز موعدك الآن" data-en="Book Your Appointment Now">احجز موعدك الآن</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-ar="عيادة د. جوستينا" data-en="Dr. Justina's Clinic">عيادة د. جوستينا</h3>
+                    <p data-ar="نقدم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية" data-en="We provide dental services with the highest standards of quality and professionalism">نقدم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                        <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+                        <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                        <li><a href="contact.html" data-ar="التواصل" data-en="Contact">التواصل</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-ar="معلومات التواصل" data-en="Contact Info">معلومات التواصل</h3>
+                    <p data-ar="الهاتف: +963 938 289 397" data-en="Phone: +963 938 289 397">الهاتف: +963 938 289 397</p>
+                    <p data-ar="البريد: joustinaaltalli@gmail.com" data-en="Email: joustinaaltalli@gmail.com">البريد: joustinaaltalli@gmail.com</p>
+                    <p data-ar="العنوان: دمشق، سوريا" data-en="Address: Damascus, Syria">العنوان: دمشق، سوريا</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-ar="© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب الأسنان. جميع الحقوق محفوظة." data-en="© 2025 Dr.J Dental Clinic - Dr. Justina Youssef Al-Tali Dental Clinic. All rights reserved.">© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب الأسنان. جميع الحقوق محفوظة.</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <p style="font-size: 0.9rem; opacity: 0.8;">
+                        <span data-ar="تم التصميم والتطوير بواسطة" data-en="Designed & Developed by">تم التصميم والتطوير بواسطة</span>
+                        <a href="https://habeebandraws.vercel.app/" target="_blank" 
+                           style="color: #87ceeb; text-decoration: none; font-weight: bold; transition: color 0.3s;"
+                           onmouseover="this.style.color='#ffffff'" 
+                           onmouseout="this.style.color='#87ceeb'">
+                            Habeeb Andraws
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

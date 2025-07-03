@@ -1,0 +1,408 @@
+    <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض أعمالنا - Dr.J Dental Clinic</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div>Dr.J Dental Clinic</div>
+                <div style="font-size: 0.8rem; font-weight: normal;">عيادة د. جوستينا لطب الأسنان</div>
+            </div>
+            
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+                <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                <li><a href="hours.html" data-ar="ساعات العمل" data-en="Hours">ساعات العمل</a></li>
+                <li><a href="contact.html" data-ar="الحجز والتواصل" data-en="Contact">الحجز والتواصل</a></li>
+                <li><a href="gallery.html" class="active" data-ar="المعرض" data-en="Gallery">المعرض</a></li>
+                <li><a href="blog.html" data-ar="المدونة" data-en="Blog">المدونة</a></li>
+            </ul>
+            
+            <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 data-ar="معرض أعمالنا" data-en="Our Work Gallery">معرض أعمالنا</h1>
+                <p data-ar="اطلع على نماذج من أعمالنا وخدماتنا المتميزة" data-en="View samples of our work and distinguished services">اطلع على نماذج من أعمالنا وخدماتنا المتميزة</p>
+            </div>
+        </section>
+
+        <!-- Gallery Filter -->
+        <section class="gallery-filter">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all" data-ar="جميع الأعمال" data-en="All Work">جميع الأعمال</button>
+                    <button class="filter-btn" data-filter="pediatric" data-ar="طب أسنان الأطفال" data-en="Pediatric Dentistry">طب أسنان الأطفال</button>
+                    <button class="filter-btn" data-filter="cleaning" data-ar="تنظيف وتقليح" data-en="Cleaning & Scaling">تنظيف وتقليح</button>
+                    <button class="filter-btn" data-filter="endodontic" data-ar="معالجات لبية" data-en="Endodontic Treatment">معالجات لبية</button>
+                    <button class="filter-btn" data-filter="extraction" data-ar="قلع الأسنان" data-en="Tooth Extraction">قلع الأسنان</button>
+                    <button class="filter-btn" data-filter="restoration" data-ar="ترميمات تجميلية" data-en="Dental Restorations">ترميمات تجميلية</button>
+                    <button class="filter-btn" data-filter="implants" data-ar="زراعة الأسنان" data-en="Dental Implants">زراعة الأسنان</button>
+                    <button class="filter-btn" data-filter="orthodontic" data-ar="تقويم الأسنان" data-en="Orthodontic Treatment">تقويم الأسنان</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-treatments">
+                    
+                    <!-- Pediatric Dentistry -->
+                    <div class="gallery-card" data-category="pediatric">
+                        <div class="gallery-image" onclick="openImageModal(this)">
+                            <img src="../assets/images/طب أسنان الأطفال.jpg" alt="Pediatric Dentistry" data-ar-alt="طب أسنان الأطفال" data-en-alt="Pediatric Dentistry">
+                            <div class="image-placeholder">
+                                <span data-ar="طب أسنان الأطفال" data-en="Pediatric Dentistry">طب أسنان الأطفال</span>
+                            </div>
+                            <div class="zoom-indicator">🔍</div>
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">👶</div>
+                            </div>
+                        </div>
+                        <div class="gallery-content">
+                            <h3 data-ar="طب أسنان الأطفال" data-en="Pediatric Dentistry">طب أسنان الأطفال</h3>
+                            <p data-ar="التواصل اللطيف مع الطفل وجعله يتعامل بإيجابية مع المعالجة" data-en="Gentle conversations and connection with the child, making him/her act positively during treatment">التواصل اللطيف مع الطفل وجعله يتعامل بإيجابية مع المعالجة</p>
+                        </div>
+                    </div>
+
+                    <!-- Cleaning and Scaling -->
+                    <div class="gallery-card" data-category="cleaning">
+                        <div class="gallery-image" onclick="openImageModal(this)">
+                            <img src="../assets/images/تنظيف و تقليح .jpg" alt="Cleaning and Scaling" data-ar-alt="تنظيف وتقليح الأسنان" data-en-alt="Cleaning and Scaling">
+                            <div class="image-placeholder">
+                                <span data-ar="تنظيف وتقليح الأسنان" data-en="Cleaning and Scaling">تنظيف وتقليح الأسنان</span>
+                            </div>
+                            <div class="zoom-indicator">🔍</div>
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">✨</div>
+                            </div>
+                        </div>
+                        <div class="gallery-content">
+                            <h3 data-ar="تنظيف وتقليح الأسنان" data-en="Cleaning and Scaling">تنظيف وتقليح الأسنان</h3>
+                            <p data-ar="أولى خطوات المعالجة الناجحة تكون من خلال الحصول على بيئة فموية صحية" data-en="First step for successful treatment is gaining clean oral environment">أولى خطوات المعالجة الناجحة تكون من خلال الحصول على بيئة فموية صحية</p>
+                        </div>
+                    </div>
+
+                    <!-- Endodontic Treatment -->
+                    <div class="gallery-card" data-category="endodontic">
+                        <div class="gallery-image" onclick="openImageModal(this)">
+                            <img src="../assets/images/معالجات لبية.jpg" alt="Endodontic Treatment" data-ar-alt="معالجات لبية" data-en-alt="Endodontic Treatment">
+                            <div class="image-placeholder">
+                                <span data-ar="معالجات لبية" data-en="Endodontic Treatment">معالجات لبية</span>
+                            </div>
+                            <div class="zoom-indicator">🔍</div>
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">⚕️</div>
+                            </div>
+                        </div>
+                        <div class="gallery-content">
+                            <h3 data-ar="معالجات لبية" data-en="Endodontic Treatment">معالجات لبية</h3>
+                            <p data-ar="التخلص من الألم الشديد الذي يجعلك لا تنام ليلاً، الحل بأفضل التقنيات ضمن عيادتنا وبالطبع بخبرة مميزة" data-en="To get rid of severe pain that prevents you from sleeping, solution is here in our clinic with the best techniques, tools and for sure best experience">التخلص من الألم الشديد الذي يجعلك لا تنام ليلاً، الحل بأفضل التقنيات ضمن عيادتنا وبالطبع بخبرة مميزة</p>
+                        </div>
+                    </div>
+
+                    <!-- Extraction -->
+                    <div class="gallery-card" data-category="extraction">
+                        <div class="gallery-image" onclick="openImageModal(this)">
+                            <img src="../assets/images/قلع الأسنان.jpg" alt="Tooth Extraction" data-ar-alt="قلع الأسنان" data-en-alt="Tooth Extraction">
+                            <div class="image-placeholder">
+                                <span data-ar="قلع الأسنان" data-en="Tooth Extraction">قلع الأسنان</span>
+                            </div>
+                            <div class="zoom-indicator">🔍</div>
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">🔧</div>
+                            </div>
+                        </div>
+                        <div class="gallery-content">
+                            <h3 data-ar="قلع الأسنان" data-en="Extraction">قلع الأسنان</h3>
+                            <p data-ar="سن استطبابه القلع وتريد التخدير دون الخوف من الآلام التالية للمعالجة" data-en="A hopeless tooth that is indicated for extraction with painless anesthesia">سن استطبابه القلع وتريد التخدير دون الخوف من الآلام التالية للمعالجة</p>
+                        </div>
+                    </div>
+
+                    <!-- Dental Restorations -->
+                    <div class="gallery-card" data-category="restoration">
+                        <div class="gallery-image" onclick="openImageModal(this)">
+                            <img src="../assets/images/ترميمات تجميلية.jpg" alt="Dental Restorations" data-ar-alt="ترميمات تجميلية" data-en-alt="Dental Restorations">
+                            <div class="image-placeholder">
+                                <span data-ar="ترميمات تجميلية" data-en="Dental Restorations">ترميمات تجميلية</span>
+                            </div>
+                            <div class="zoom-indicator">🔍</div>
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">💎</div>
+                            </div>
+                        </div>
+                        <div class="gallery-content">
+                            <h3 data-ar="ترميمات تجميلية" data-en="Dental Restorations">ترميمات تجميلية</h3>
+                            <p data-ar="لدى وجود أي نخر - كسر - عيب في الأسنان حجماً، شكلاً وتريد مظه�� جمالي ووظيفي، نقدم أفضل الترميمات" data-en="Caries - cracks - defect in shape, size and you want aesthetic and functional restoration, contact us">لدى وجود أي نخر - كسر - عيب في الأسنان حجماً، شكلاً وتريد مظهر جمالي ووظيفي، نقدم أفضل الترميمات</p>
+                        </div>
+                    </div>
+
+                    <!-- Implants -->
+                    <div class="gallery-card" data-category="implants">
+                        <div class="gallery-image" onclick="openImageModal(this)">
+                            <img src="../assets/images/جراحة و زرع الأسنان .jpg" alt="Dental Implants" data-ar-alt="جراحة وزرع الأسنان" data-en-alt="Dental Implants">
+                            <div class="image-placeholder">
+                                <span data-ar="جراحة وزرع الأسنان" data-en="Dental Implants">جراحة وزرع الأسنان</span>
+                            </div>
+                            <div class="zoom-indicator">🔍</div>
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">🦷</div>
+                            </div>
+                        </div>
+                        <div class="gallery-content">
+                            <h3 data-ar="جراحة وزرع الأسنان" data-en="Implants">جراحة وزرع الأسنان</h3>
+                            <p data-ar="سن أو أسنان ��فقودة ومظهر غير جمالي، أفضل حل أمامك وهو زراعة الأسنان وبأفضل أنواع الزرعات والتقنيات" data-en="Tooth or teeth loss, non-aesthetic appearance, best solution is in front of you! Implants! With best implants and techniques">سن أو أسنان مفقودة ومظهر غير جمالي، أفضل حل أمامك وهو زراعة الأسنان وبأفضل أنواع الزرعات والتقنيات</p>
+                        </div>
+                    </div>
+
+                    <!-- Orthodontic Treatment -->
+                    <div class="gallery-card" data-category="orthodontic">
+                        <div class="gallery-image" onclick="openImageModal(this)">
+                            <img src="../assets/images/تقويم الأسنان .jpg" alt="Orthodontic Treatment" data-ar-alt="تقويم الأسنان" data-en-alt="Orthodontic Treatment">
+                            <div class="image-placeholder">
+                                <span data-ar="تقويم الأسنان" data-en="Orthodontic Treatment">تقويم الأسنان</span>
+                            </div>
+                            <div class="zoom-indicator">🔍</div>
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">📐</div>
+                            </div>
+                        </div>
+                        <div class="gallery-content">
+                            <h3 data-ar="تقويم الأسنان" data-en="Orthodontic Treatment">تقويم الأسنان</h3>
+                            <p data-ar="لديك أسنان مزدحمة أو فراغات في أسنانك، بعض الأسنان لم تظهر بعد! نوفر لك جميع أنواع الأجهزة التقويمية المتحركة والثابتة" data-en="Spaces between your teeth, impacted teeth, we offer all types of orthodontic braces (removable, fixed, ...)">لديك أسنان مزدحمة أو فراغات في أسنانك، بعض الأسنان لم تظهر بعد! نوفر لك جميع أنواع الأجهزة التقويمية المتحركة والثابتة</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Before & After Section -->
+        <!-- <section class="before-after-section">
+            <div class="container">
+                <h2 data-ar="قبل وبعد العلاج" data-en="Before & After Treatment">قبل وبعد العلاج</h2>
+                <p data-ar="شاهد ال��تائج المذهلة لعلاجاتنا" data-en="See the amazing results of our treatments">شاهد النتائج المذهلة لعلاجاتنا</p>
+                 -->
+                <!--
+                <div class="before-after-grid">
+                    <div class="before-after-card">
+                        <div class="before-after-images">
+                            <div class="before-image">
+                                <img src="../assets/images/before-1.jpg" alt="Before Treatment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="image-placeholder" style="display: none;">
+                                    <span data-ar="قبل العلاج" data-en="Before Treatment">قبل العلاج</span>
+                                </div>
+                                <div class="image-label" data-ar="قبل" data-en="Before">قبل</div>
+                            </div>
+                            <div class="after-image">
+                                <img src="../assets/images/after-1.jpg" alt="After Treatment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="image-placeholder" style="display: none;">
+                                    <span data-ar="بعد العلاج" data-en="After Treatment">بعد العلاج</span>
+                                </div>
+                                <div class="image-label" data-ar="بعد" data-en="After">بعد</div>
+                            </div>
+                        </div>
+                        <div class="treatment-info">
+                            <h3 data-ar="ترميم تجميلي" data-en="Cosmetic Restoration">ترميم تجميلي</h3>
+                            <p data-ar="استعادة الشكل الطبيعي والوظيفة للأسنان" data-en="Restoring natural shape and function to teeth">استعادة الشكل الطبيعي والوظيفة للأسنان</p>
+                        </div>
+                    </div>
+
+                    <div class="before-after-card">
+                        <div class="before-after-images">
+                            <div class="before-image">
+                                <img src="../assets/images/before-2.jpg" alt="Before Treatment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="image-placeholder" style="display: none;">
+                                    <span data-ar="قبل العلاج" data-en="Before Treatment">قبل العلاج</span>
+                                </div>
+                                <div class="image-label" data-ar="قبل" data-en="Before">قبل</div>
+                            </div>
+                            <div class="after-image">
+                                <img src="../assets/images/after-2.jpg" alt="After Treatment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="image-placeholder" style="display: none;">
+                                    <span data-ar="بعد العلاج" data-en="After Treatment">بعد العلاج</span>
+                                </div>
+                                <div class="image-label" data-ar="بعد" data-en="After">بعد</div>
+                            </div>
+                        </div>
+                        <div class="treatment-info">
+                            <h3 data-ar="تنظيف الأسنان" data-en="Teeth Cleaning">تنظيف الأسنان</h3>
+                            <p data-ar="إزالة الجير والبلاك للحصول على أسنان نظيفة وصحية" data-en="Removing tartar and plaque for clean and healthy teeth">إزالة الجير والبلاك للحصول على أسنان نظيفة وصحية</p>
+                        </div>
+                    </div>
+
+                    <div class="before-after-card">
+                        <div class="before-after-images">
+                            <div class="before-image">
+                                <img src="../assets/images/before-3.jpg" alt="Before Treatment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="image-placeholder" style="display: none;">
+                                    <span data-ar="قبل العلاج" data-en="Before Treatment">قبل العلاج</span>
+                                </div>
+                                <div class="image-label" data-ar="قبل" data-en="Before">قبل</div>
+                            </div>
+                            <div class="after-image">
+                                <img src="../assets/images/after-3.jpg" alt="After Treatment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="image-placeholder" style="display: none;">
+                                    <span data-ar="بعد العلاج" data-en="After Treatment">بعد العلاج</span>
+                                </div>
+                                <div class="image-label" data-ar="بعد" data-en="After">بعد</div>
+                            </div>
+                        </div>
+                        <div class="treatment-info">
+                            <h3 data-ar="تقويم الأسنان" data-en="Orthodontic Treatment">تقويم الأسنان</h3>
+                            <p data-ar="تصحيح اصطفاف الأسنان للحصول على ابتسامة مثالية" data-en="Correcting tooth alignment for a perfect smile">تصحيح اصطفاف الأسنان للحصول على ابتسامة مثالية</p>
+                        </div>
+                    </div>
+                </div>
+                -->
+            <!-- </div> -->
+        <!-- </section> -->
+
+        <!-- Equipment Gallery -->
+        <section class="equipment-gallery">
+            <div class="container">
+                <h2 data-ar="أجهزتنا ومعداتنا" data-en="Our Equipment & Devices">أجهزتنا ومعداتنا</h2>
+                <p data-ar="نستخدم أحدث الأجهزة والتقنيات في مجال طب الأسنان" data-en="We use the latest devices and technologies in dentistry">نستخدم أحدث الأجهزة والتقنيات في مجال طب الأسنان</p>
+                
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="../assets/images/xray-device.jpg" alt="X-ray Device" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="image-placeholder" style="display: none;">
+                                <div class="equipment-icon">📱</div>
+                                <span data-ar="جهاز الأشعة المحمول" data-en="Portable X-ray Device">جهاز الأشعة المحمول</span>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3 data-ar="جهاز الأشعة المحمول" data-en="Portable X-ray Device">جهاز الأشعة المحمول</h3>
+                            <p data-ar="للتشخيص الدقيق والسريع" data-en="For accurate and fast diagnosis">للتشخيص الدقيق والسريع</p>
+                        </div>
+                    </div>
+
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="../assets/images/apex-locator.jpg" alt="Apex Locator" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="image-placeholder" style="display: none;">
+                                <div class="equipment-icon">🎯</div>
+                                <span data-ar="جهاز Apex Locator" data-en="Apex Locator Device">جهاز Apex Locator</span>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3 data-ar="جهاز Apex Locator" data-en="Apex Locator Device">جهاز Apex Locator</h3>
+                            <p data-ar="لتحديد طول القناة بدقة عالية" data-en="For precise root canal length determination">لتحديد طول القناة بدقة عالية</p>
+                        </div>
+                    </div>
+
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="../assets/images/dental-chair.jpg" alt="Dental Chair" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="image-placeholder" style="display: none;">
+                                <div class="equipment-icon">🪑</div>
+                                <span data-ar="كرسي الأسنان المتطور" data-en="Advanced Dental Chair">كرسي الأسنان المتطور</span>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3 data-ar="كرسي الأسنان المتطور" data-en="Advanced Dental Chair">كرسي الأسنان المتطور</h3>
+                            <p data-ar="لراحة المريض أثناء العلاج" data-en="For patient comfort during treatment">لراحة المريض أثناء العلاج</p>
+                        </div>
+                    </div>
+
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="../assets/images/sterilization.jpg" alt="Sterilization Equipment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="image-placeholder" style="display: none;">
+                                <div class="equipment-icon">🧼</div>
+                                <span data-ar="أجهزة التعقيم" data-en="Sterilization Equipment">أجهزة التعقيم</span>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3 data-ar="أجهزة التعقيم" data-en="Sterilization Equipment">أ��هزة التعقيم</h3>
+                            <p data-ar="لضمان أعلى معايير النظافة والسلامة" data-en="To ensure highest standards of cleanliness and safety">لضمان أعلى معايير النظافة والسلامة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 data-ar="هل أعجبتك أعمالنا؟" data-en="Did You Like Our Work?">هل أعجبتك أعمالنا؟</h2>
+                <p data-ar="احجز موعدك الآن واحصل على نفس النتائج المذهلة" data-en="Book your appointment now and get the same amazing results">احجز موعدك الآن واحصل على نفس النتائج المذهلة</p>
+                <a href="contact.html" class="cta-button" data-ar="احجز موعدك الآن" data-en="Book Your Appointment Now">احجز موعدك الآن</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeImageModal()">&times;</button>
+            <img id="modalImage" class="modal-image" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-ar="عيادة د. جوستينا" data-en="Dr. Justina's Clinic">عيادة د. جوستينا</h3>
+                    <p data-ar="نقدم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية" data-en="We provide dental services with the highest standards of quality and professionalism">نقدم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                        <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+                        <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                        <li><a href="contact.html" data-ar="التواصل" data-en="Contact">التواصل</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-ar="معلومات التواصل" data-en="Contact Info">معلومات التواصل</h3>
+                    <p data-ar="الهاتف: +963 938 289 397" data-en="Phone: +963 938 289 397">الهاتف: +963 938 289 397</p>
+                    <p data-ar="البريد: joustinaaltalli@gmail.com" data-en="Email: joustinaaltalli@gmail.com">البريد: joustinaaltalli@gmail.com</p>
+                    <p data-ar="العنوان: دمشق، سوريا" data-en="Address: Damascus, Syria">العنوان: دمشق، سوريا</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-ar="© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب الأسنان. جميع الحقوق محفوظة." data-en="© 2025 Dr.J Dental Clinic - Dr. Justina Youssef Al-Tali Dental Clinic. All rights reserved.">© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي ��طب الأسنان. جميع الحقوق محفوظة.</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <p style="font-size: 0.9rem; opacity: 0.8;">
+                        <span data-ar="تم التصميم والتطوير بواسطة" data-en="Designed & Developed by">تم التصميم والتطوير بواسطة</span>
+                        <a href="https://habeebandraws.vercel.app/" target="_blank" 
+                           style="color: #87ceeb; text-decoration: none; font-weight: bold; transition: color 0.3s;"
+                           onmouseover="this.style.color='#ffffff'" 
+                           onmouseout="this.style.color='#87ceeb'">
+                            Habeeb Andraws
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr.J Dental Clinic - عيادة د. جوستينا لطب الأسنان</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div>Dr.J Dental Clinic</div>
+                <div style="font-size: 0.8rem; font-weight: normal;">عيادة د. جوستينا لطب الأسنان</div>
+            </div>
+            
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+                <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                <li><a href="hours.html" data-ar="ساعات العمل" data-en="Hours">ساعات العمل</a></li>
+                <li><a href="contact.html" data-ar="الحجز والتواصل" data-en="Contact">الحجز والتواصل</a></li>
+                <li><a href="gallery.html" data-ar="المعرض" data-en="Gallery">المعرض</a></li>
+                <li><a href="blog.html" data-ar="المدونة" data-en="Blog">المدونة</a></li>
+            </ul>
+            
+            <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 data-ar="مرحباً بكم في عيادة د. جوستينا لطب الأسنان" data-en="Welcome to Dr. Justina's Dental Clinic">مرحباً بكم في عيادة د. جوستينا لطب الأسنان</h1>
+                <p data-ar="نقدم لكم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية" data-en="We provide dental services with the highest standards of quality and professionalism">نقدم لكم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية</p>
+                <a href="contact.html" class="cta-button" data-ar="احجز موعدك الآن" data-en="Book Your Appointment">احجز موعدك الآن</a>
+            </div>
+        </section>
+        
+        <div class="container">
+            <div class="cards-grid">
+                <div class="card">
+                    <h3 data-ar="الدقة" data-en="Precision">الدقة</h3>
+                    <p data-ar="نحرص على تقديم أدق الخدمات الطبية باستخدام أحدث التقنيات والمعدات" data-en="We ensure the most precise medical services using the latest technologies and equipment">نحرص على تقديم أدق الخدمات الطبية باستخدام أحدث التقنيات والمعدات</p>
+                </div>
+                <div class="card">
+                    <h3 data-ar="الإنسانية" data-en="Humanity">الإنسانية</h3>
+                    <p data-ar="نتعامل مع كل مريض بكل احترام وتفهم لاحتياجاته الخاصة" data-en="We treat every patient with respect and understanding of their special needs">نتعامل مع كل مريض بكل احترام وتفهم لاحتياجاته الخاصة</p>
+                </div>
+                <div class="card">
+                    <h3 data-ar="الثقة" data-en="Trust">الثقة</h3>
+                    <p data-ar="نبني علاقة ثقة طويلة الأمد مع مرضانا من خلال الشفافية والصدق" data-en="We build long-term trust relationships with our patients through transparency and honesty">نبني علاقة ثقة طويلة الأمد مع مرضانا من خلال الشفافية والصدق</p>
+                </div>
+                <div class="card">
+                    <h3 data-ar="التميز" data-en="Excellence">التميز</h3>
+                    <p data-ar="نسعى دائماً للتميز في كل ما نقدمه من خدمات طبية" data-en="We always strive for excellence in all the medical services we provide">نسعى دائماً للتميز في كل ما نقدمه من خدمات طبية</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Services Preview -->
+        <section class="quick-services">
+            <div class="container">
+                <h2 data-ar="خدماتنا المميزة" data-en="Our Featured Services">خدماتنا المميزة</h2>
+                <div class="services-preview">
+                    <div class="service-preview-card">
+                        <div class="service-icon">🦷</div>
+                        <h3 data-ar="ترميمات تجميلية" data-en="Cosmetic Restorations">ترميمات تجميلية</h3>
+                        <p data-ar="حشوات تجميلية بمواد عالية الجودة" data-en="High-quality cosmetic fillings">حشوات تجميلية بمواد عالية الجودة</p>
+                        <a href="services.html" class="learn-more" data-ar="اعرف المزيد" data-en="Learn More">اعرف المزيد</a>
+                    </div>
+                    <div class="service-preview-card">
+                        <div class="service-icon">👑</div>
+                        <h3 data-ar="جسور وتيجان" data-en="Bridges & Crowns">جسور وتيجان</h3>
+                        <p data-ar="تركيبات ثابتة ومتحركة عالية الجودة" data-en="High-quality fixed and removable prosthetics">تركيبات ثابتة ومتحركة عالية الجودة</p>
+                        <a href="services.html" class="learn-more" data-ar="اعرف المزيد" data-en="Learn More">اعرف المزيد</a>
+                    </div>
+                    <div class="service-preview-card">
+                        <div class="service-icon">🔧</div>
+                        <h3 data-ar="زراعة الأسنان" data-en="Dental Implants">زراعة الأسنان</h3>
+                        <p data-ar="حلول دائمة لتعويض الأسنان المفقودة" data-en="Permanent solutions for missing teeth">حلول دائمة لتعويض الأسنان المفقودة</p>
+                        <a href="services.html" class="learn-more" data-ar="اعرف المزيد" data-en="Learn More">اعرف المزيد</a>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="services.html" class="cta-button" data-ar="جميع الخدمات" data-en="All Services">جميع الخدمات</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Preview -->
+        <section class="about-preview">
+            <div class="container">
+                <div class="about-preview-content">
+                    <div class="about-text">
+                        <h2 data-ar="د. جوستينا يوسف التلي" data-en="Dr. Justina Youssef Al-Tali">د. جوستينا يوسف التلي</h2>
+                        <p class="doctor-title" data-ar="طبيبة أسنان متخصصة" data-en="Specialized Dentist">طبيبة أسنان متخصصة</p>
+                        <p data-ar="طبيبة أسنان متخصصة حاصلة على بكالوريوس في طب الأسنان وجراحتها، تتمتع بخبرة واسعة في مجال طب الأسنان مع أكثر من 100 عمل سريري خلال فترة الدراسة." data-en="Specialized dentist with a Bachelor's degree in Dentistry and Oral Surgery, with extensive experience in dentistry with more than 100 clinical cases during studies.">طبيبة أسنان متخصصة حاصلة على بكالوريوس في طب الأسنان وجراحتها، تتمتع بخبرة واسعة في مجال طب الأسنان مع أكثر من 100 عمل سريري خلال فترة الدراسة.</p>
+                        <a href="about.html" class="cta-button" data-ar="اعرف المزيد عنا" data-en="Learn More About Us">اعرف المزيد عنا</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="../assets/images/الصورة الشخصية.jpg" alt="Dr. Justina Youssef Al-Tali" 
+                             data-ar-alt="د. جوستينا يوسف التلي" 
+                             data-en-alt="Dr. Justina Youssef Al-Tali"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display: none;">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">👩‍⚕️</div>
+                                <div class="placeholder-text">
+                                    <span data-ar="د. جوستينا يوسف التلي" data-en="Dr. Justina Youssef Al-Tali">د. جوستينا يوسف التلي</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-ar="عيادة د. جوستينا" data-en="Dr. Justina's Clinic">عيادة د. جوستينا</h3>
+                    <p data-ar="نقدم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية" data-en="We provide dental services with the highest standards of quality and professionalism">نقدم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+                        <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                        <li><a href="contact.html" data-ar="التواصل" data-en="Contact">التواصل</a></li>
+                        <li><a href="gallery.html" data-ar="المعرض" data-en="Gallery">المعرض</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-ar="معلومات التواصل" data-en="Contact Info">معلومات التواصل</h3>
+                    <p data-ar="الهاتف: +963 938 289 397" data-en="Phone: +963 938 289 397">الهاتف: +963 938 289 397</p>
+                    <p data-ar="البريد: joustinaaltalli@gmail.com" data-en="Email: joustinaaltalli@gmail.com">البريد: joustinaaltalli@gmail.com</p>
+                    <p data-ar="العنوان: دمشق، سوريا" data-en="Address: Damascus, Syria">العنوان: دمشق، سوريا</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-ar="© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب الأسنان. جميع الحقوق محفوظة." data-en="© 2025 Dr.J Dental Clinic - Dr. Justina Youssef Al-Tali Dental Clinic. All rights reserved.">© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب الأسنان. جميع الحقوق محفوظة.</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <p style="font-size: 0.9rem; opacity: 0.8;">
+                        <span data-ar="تم التصميم والتطوير بواسطة" data-en="Designed & Developed by">تم التصميم والتطوير بواسطة</span>
+                        <a href="https://habeebandraws.vercel.app/" target="_blank" 
+                           style="color: #87ceeb; text-decoration: none; font-weight: bold; transition: color 0.3s;"
+                           onmouseover="this.style.color='#ffffff'" 
+                           onmouseout="this.style.color='#87ceeb'">
+                            Habeeb Andraws
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

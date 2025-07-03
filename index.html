@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="عيادة د. جوستينا لطب الأسنان - خدمات طب الأسنان بأعلى معايير الجودة والاحترافية">
+    <meta name="keywords" content="طبيب أسنان, عيادة أسنان, دمشق, سوريا, تقويم أسنان, زراعة أسنان">
+    <meta name="author" content="Dr. Justina Youssef Al-Tali">
+    <meta http-equiv="refresh" content="6;url=pages/index.html">
+    <link rel="canonical" href="pages/index.html">
     <title>Dr.J Dental Clinic - عيادة د. جوستينا لطب الأسنان</title>
     <style>
         * {
@@ -10,980 +15,30 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            transition: all 0.3s ease;
-        }
-
-        /* Header */
-        header {
             background: linear-gradient(135deg, #2c5aa0, #4a90e2);
             color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        nav {
+            min-height: 100vh;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+            overflow-x: hidden;
         }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            padding: 0.5rem;
-        }
-
-        .nav-menu a:hover {
-            color: #87ceeb;
-        }
-
-        .lang-toggle {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            padding: 0.5rem 1rem;
+        
+        .redirect-container {
+            max-width: 650px;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .lang-toggle:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Main Content */
-        main {
-            margin-top: 80px;
-        }
-
-        .section {
-            display: none;
-            padding: 4rem 0;
-            min-height: 60vh;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        .section h2 {
-            color: #2c5aa0;
-            margin-bottom: 2rem;
-            text-align: center;
-            font-size: 2.5rem;
-        }
-
-        /* Home Section */
-        .hero {
-            background: linear-gradient(rgba(44, 90, 160, 0.8), rgba(74, 144, 226, 0.8)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e8f4f8" width="1200" height="600"/><path fill="%23d1e7dd" d="M0,400 Q300,350 600,400 T1200,400 L1200,600 L0,600 Z"/></svg>');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 6rem 0;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            background: #ff6b6b;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            background: #ff5252;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Cards */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: #2c5aa0;
-            margin-bottom: 1rem;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .doctor-image-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .doctor-image {
-            width: 100%;
-            height: 400px;
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-        }
-
-        .doctor-image:hover {
-            transform: translateY(-5px);
-        }
-
-        .doctor-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            transition: transform 0.3s ease;
-        }
-
-        .doctor-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .doctor-image .image-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-            border: 2px dashed #dee2e6;
-        }
-
-        .placeholder-content {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .placeholder-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            opacity: 0.7;
-        }
-
-        .placeholder-text span {
-            display: block;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #2c5aa0;
-        }
-
-        .placeholder-text small {
-            font-size: 0.9rem;
-            color: #6c757d;
-            line-height: 1.4;
-            display: block;
-        }
-
-        /* Credentials Section */
-        .credentials {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .credential-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .credential-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-
-        .credential-icon {
-            font-size: 1.5rem;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #4a90e2, #2c5aa0);
-            border-radius: 50%;
-            color: white;
-            flex-shrink: 0;
-        }
-
-        /* Doctor Info Section */
-        .doctor-info h3 {
-            color: #2c5aa0;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .doctor-title {
-            color: #4a90e2;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #e9ecef;
-        }
-
-        .doctor-description {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #555;
-            margin-bottom: 2rem;
-        }
-
-        .clinic-features {
-            list-style: none;
-            margin: 1.5rem 0 2rem 0;
-        }
-
-        .clinic-features li {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-        }
-
-        .clinic-features li:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-        }
-
-        .feature-icon {
-            font-size: 1.5rem;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #4a90e2, #2c5aa0);
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        /* Doctor Quote */
-        .doctor-quote {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid #4a90e2;
-            margin-top: 2rem;
-            position: relative;
-        }
-
-        .doctor-quote::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 4rem;
-            color: #4a90e2;
-            opacity: 0.3;
-            font-family: serif;
-        }
-
-        .doctor-quote blockquote {
-            font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #555;
-            margin: 0 0 1rem 0;
-        }
-
-        .doctor-quote cite {
-            color: #2c5aa0;
-            font-weight: 600;
-            font-style: normal;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: #4a90e2;
-            margin-bottom: 1rem;
-        }
-
-        /* Working Hours */
-        .hours-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .hours-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .hours-card h3 {
-            color: #2c5aa0;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #4a90e2;
-            padding-bottom: 0.5rem;
-        }
-
-        .hours-card ul {
-            list-style: none;
-        }
-
-        .hours-card li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        /* Contact Form */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #2c5aa0;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #4a90e2;
-        }
-
-        .contact-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: #4a90e2;
-            margin-left: 1rem;
-        }
-
-        /* Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            height: 200px;
-            background: #e9ecef;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        /* Gallery Treatments - New Responsive Image Cards */
-        .gallery-treatments {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .gallery-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        .gallery-image {
-            position: relative;
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .gallery-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            transition: transform 0.3s ease;
-            display: block;
-        }
-
-        /* Image placeholder for failed loads */
-        .image-placeholder {
-            width: 100%;
-            height: 100%;
-            background: #e9ecef;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-            font-size: 1rem;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        /* Loading state for images */
-        .gallery-image img[loading="lazy"] {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-image img[loading="lazy"].loaded {
-            opacity: 1;
-        }
-
-        .gallery-card:hover .gallery-image img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(44, 90, 160, 0.8), rgba(74, 144, 226, 0.8));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-card:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-icon {
-            font-size: 3rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .gallery-content {
-            padding: 1.5rem;
-        }
-
-        .gallery-content h3 {
-            color: #2c5aa0;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .gallery-content p {
-            color: #666;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        /* Responsive Gallery */
-        @media (max-width: 1200px) {
-            .gallery-treatments {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.5rem;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .gallery-treatments {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-            
-            .gallery-image {
-                height: 220px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .gallery-treatments {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .gallery-image {
-                height: 200px;
-            }
-            
-            .gallery-content {
-                padding: 1rem;
-            }
-            
-            .gallery-content h3 {
-                font-size: 1.1rem;
-            }
-            
-            .gallery-content p {
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gallery-treatments {
-                gap: 1rem;
-            }
-            
-            .gallery-image {
-                height: 180px;
-            }
-            
-            .gallery-content {
-                padding: 0.8rem;
-            }
-            
-            .gallery-icon {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* High DPI screens optimization */
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .gallery-image img {
-                image-rendering: -webkit-optimize-contrast;
-                image-rendering: crisp-edges;
-            }
-        }
-
-        /* Image Modal Styles */
-        .image-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease;
-        }
-
-        .image-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            margin: auto;
-            animation: zoomIn 0.3s ease;
-        }
-
-        .modal-image {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            /* Ensure image maintains aspect ratio */
-            display: block;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .modal-close:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-
-        .modal-info {
-            position: absolute;
-            bottom: -60px;
-            left: 0;
-            right: 0;
-            color: white;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 1rem;
-            border-radius: 10px;
             backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 0.8s ease-out;
         }
-
-        .modal-info h3 {
-            margin-bottom: 0.5rem;
-            color: #87ceeb;
-        }
-
-        /* Enhanced Gallery Image Styles */
-        .gallery-image {
-            position: relative;
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-            cursor: pointer;
-            border-radius: 15px 15px 0 0;
-        }
-
-        .gallery-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            transition: all 0.3s ease;
-            display: block;
-            /* Ensure images are always properly sized */
-            min-width: 100%;
-            min-height: 100%;
-            max-width: none;
-            max-height: none;
-        }
-
-        .gallery-card:hover .gallery-image img {
-            transform: scale(1.1);
-        }
-
-        /* Zoom indicator */
-        .zoom-indicator {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 0.5rem;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .gallery-card:hover .zoom-indicator {
-            opacity: 1;
-        }
-
-        /* Animation keyframes */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes zoomIn {
-            from { 
-                opacity: 0;
-                transform: scale(0.5);
-            }
-            to { 
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Mobile modal adjustments */
-        @media (max-width: 768px) {
-            .modal-content {
-                max-width: 95%;
-                max-height: 85%;
-                margin: 2rem auto;
-            }
-            
-            .modal-close {
-                top: -35px;
-                font-size: 1.5rem;
-                width: 35px;
-                height: 35px;
-            }
-            
-            .modal-info {
-                bottom: -50px;
-                padding: 0.8rem;
-                font-size: 0.9rem;
-            }
-            
-            .modal-image {
-                max-width: 100%;
-                max-height: 70vh;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .modal-content {
-                max-width: 98%;
-                max-height: 80%;
-                margin: 1rem auto;
-            }
-            
-            .modal-close {
-                top: -30px;
-                font-size: 1.3rem;
-                width: 30px;
-                height: 30px;
-            }
-            
-            .modal-info {
-                bottom: -45px;
-                padding: 0.6rem;
-                font-size: 0.8rem;
-            }
-            
-            .modal-image {
-                max-height: 60vh;
-            }
-        }
-
-        /* Blog */
-        .blog-post {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .blog-post h3 {
-            color: #2c5aa0;
-            margin-bottom: 1rem;
-        }
-
-        .blog-date {
-            color: #6c757d;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c5aa0;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                gap: 1rem;
-                margin-top: 1rem;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .section h2 {
-                font-size: 2rem;
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .cards-grid,
-            .services-grid,
-            .hours-grid,
-            .gallery-treatments {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* RTL/LTR Support */
-        [dir="ltr"] {
-            text-align: left;
-        }
-
-        [dir="ltr"] .contact-icon {
-            margin-right: 1rem;
-            margin-left: 0;
-        }
-
-        [dir="ltr"] .nav-menu {
-            margin-right: auto;
-        }
-
-        [dir="rtl"] .nav-menu {
-            margin-left: auto;
-        }
-
-        /* Animation */
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -994,842 +49,331 @@
                 transform: translateY(0);
             }
         }
-
-        .section.active {
-            animation: fadeInUp 0.6s ease-out;
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #ffffff, #87ceeb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .message {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .message p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .redirect-button {
+            background: linear-gradient(45deg, #ff6b6b, #ff5252);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.5rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .redirect-button:hover {
+            background: linear-gradient(45deg, #ff5252, #ff4444);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+        }
+        
+        .redirect-button:active {
+            transform: translateY(-1px);
+        }
+        
+        .countdown {
+            font-size: 1rem;
+            margin-top: 2rem;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.2rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .feature-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #87ceeb);
+            border-radius: 2px;
+            animation: progress 5s linear;
+        }
+        
+        @keyframes progress {
+            from { width: 100%; }
+            to { width: 0%; }
+        }
+        
+        .skip-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+        
+        .skip-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .redirect-container {
+                margin: 1rem;
+                padding: 2rem;
+                max-width: 90%;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            
+            .feature {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .feature-icon {
+                font-size: 1.5rem;
+            }
+            
+            .redirect-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .redirect-container {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">
-                <div>Dr.J Dental Clinic</div>
-                <div style="font-size: 0.8rem; font-weight: normal;">عيادة د. جوستينا لطب الأسنان</div>
-            </div>
-            
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#" onclick="showSection('home')" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
-                <li><a href="#" onclick="showSection('about')" data-ar="من نحن" data-en="About">من نحن</a></li>
-                <li><a href="#" onclick="showSection('services')" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
-                <li><a href="#" onclick="showSection('hours')" data-ar="ساعات العمل" data-en="Hours">ساعات العمل</a></li>
-                <li><a href="#" onclick="showSection('contact')" data-ar="الحجز والتواصل" data-en="Contact">الحجز والتواصل</a></li>
-                <li><a href="#" onclick="showSection('gallery')" data-ar="المعرض" data-en="Gallery">المعرض</a></li>
-                <li><a href="#" onclick="showSection('blog')" data-ar="المدونة" data-en="Blog">المدونة</a></li>
-            </ul>
-            
-            <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
-        </nav>
-    </header>
-
-    <main>
-        <!-- Home Section -->
-        <section id="home" class="section active">
-            <div class="hero">
-                <div class="container">
-                    <h1 data-ar="مرحباً بكم في عيادة د. جوستينا لطب الأسنان" data-en="Welcome to Dr. Justina's Dental Clinic">مرحباً بكم في عيادة د. جوستينا لطب الأسنان</h1>
-                    <p data-ar="نقدم لكم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية" data-en="We provide dental services with the highest standards of quality and professionalism">نقدم لكم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية</p>
-                    <a href="#" class="cta-button" onclick="showSection('contact')" data-ar="احجز موعدك الآن" data-en="Book Your Appointment">احجز موعدك الآن</a>
-                </div>
-            </div>
-            
-            <div class="container">
-                <div class="cards-grid">
-                    <div class="card">
-                        <h3 data-ar="الدقة" data-en="Precision">الدقة</h3>
-                        <p data-ar="نحرص على تقديم أدق الخدمات الطبية باستخدام أحدث التقنيات والمعدات" data-en="We ensure the most precise medical services using the latest technologies and equipment">نحرص على تقديم أدق الخدمات الطبية باستخدام أحدث التقنيات والمعدات</p>
-                    </div>
-                    <div class="card">
-                        <h3 data-ar="الإنسانية" data-en="Humanity">الإنسانية</h3>
-                        <p data-ar="نتعامل مع كل مريض بكل احترام وتفهم لاحتياجاته الخاصة" data-en="We treat every patient with respect and understanding of their special needs">نتعامل مع كل مريض بكل احترام وتفهم لاحتياجاته الخاصة</p>
-                    </div>
-                    <div class="card">
-                        <h3 data-ar="الثقة" data-en="Trust">الثقة</h3>
-                        <p data-ar="نبني علاقة ثقة طويلة الأمد مع مرضانا من خلال الشفافية والصدق" data-en="We build long-term trust relationships with our patients through transparency and honesty">نبني علاقة ثقة طويلة الأمد مع مرضانا من خلال الشفافية والصدق</p>
-                    </div>
-                    <div class="card">
-                        <h3 data-ar="التميز" data-en="Excellence">التميز</h3>
-                        <p data-ar="نسعى دائماً للتميز في كل ما نقدمه من خدمات طبية" data-en="We always strive for excellence in all the medical services we provide">نسعى دائماً للتميز في كل ما نقدمه من خدمات طبية</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <h2 data-ar="من نحن" data-en="About Us">من نحن</h2>
-                <div class="about-content">
-                    <div class="doctor-image-container">
-                        <!-- صورة الدكتورة - يمكنك إضافة صورة هنا -->
-                        <div class="doctor-image">
-                            <img src="الصورة الشخصية.jpg" alt="Dr. Justina Youssef Al-Tali" 
-                                 data-ar-alt="د. جوستينا يوسف التلي" 
-                                 data-en-alt="Dr. Justina Youssef Al-Tali"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="image-placeholder" style="display: none;">
-                                <div class="placeholder-content">
-                                    <div class="placeholder-icon">👩‍⚕️</div>
-                                    <div class="placeholder-text">
-                                        <span data-ar="د. جوستينا يوسف التلي" data-en="Dr. Justina Youssef Al-Tali">د. جوستينا يوسف التلي</span>
-                                        <small data-ar="لإضافة الصورة: احفظ صورة الدكتورة باسم 'dr-justina-photo.jpg' في مجلد المشروع" 
-                                               data-en="To add photo: Save doctor's photo as 'dr-justina-photo.jpg' in project folder">
-                                            لإضافة الصورة: احفظ صورة الدكتورة باسم 'dr-justina-photo.jpg' في مجلد المشروع
-                                        </small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- شهادات ومؤهلات -->
-                        <div class="credentials">
-                            <div class="credential-item">
-                                <span class="credential-icon">🎓</span>
-                                <span data-ar="بكالوريوس طب الأسنان" data-en="Bachelor of Dental Surgery">بكالوريوس طب الأسنان</span>
-                            </div>
-                            <div class="credential-item">
-                                <span class="credential-icon">🏥</span>
-                                <span data-ar="+100 حالة سريرية" data-en="+100 Clinical Cases">+100 حالة سريرية</span>
-                            </div>
-                            <div class="credential-item">
-                                <span class="credential-icon">⭐</span>
-                                <span data-ar="خبرة متخصصة" data-en="Specialized Experience">خبرة متخصصة</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="doctor-info">
-                        <h3 data-ar="د. جوستينا يوسف التلي" data-en="Dr. Justina Youssef Al-Tali">د. جوستينا يوسف التلي</h3>
-                        <p class="doctor-title" data-ar="طبيبة أسنان متخصصة" data-en="Specialized Dentist">طبيبة أسنان متخصصة</p>
-                        
-                        <p class="doctor-description" data-ar="طبيبة أسنان متخصصة حاصلة على بكالوريوس في طب الأسنان وجراحتها، تتمتع بخبرة واسعة ف�� مجال طب الأسنان مع أكثر من 100 عمل سريري خلال فترة الدراسة. نحرص على تقديم أفضل الخدمات الطبية بأعلى معايير الجودة والاحترافية." data-en="Specialized dentist with a Bachelor's degree in Dentistry and Oral Surgery, with extensive experience in dentistry with more than 100 clinical cases during studies. We strive to provide the best medical services with the highest standards of quality and professionalism.">طبيبة أسنان متخصصة حاصلة على بكالوريوس في طب الأسنان وجراحتها، تتمتع بخبرة واسعة في مجال طب الأسنان مع أكثر من 100 عمل سريري خلال فترة الدراسة. نحرص على تقديم أفضل الخدمات الطبية بأعلى معايير الجودة والاحترافية.</p>
-                        
-                        <h4 data-ar="ما يميز عيادتنا:" data-en="What Makes Our Clinic Special:">ما يميز عيادتنا:</h4>
-                        <ul class="clinic-features">
-                            <li data-ar="استخدام مواد عالية الجودة في جميع العلاجات" data-en="Using high-quality materials in all treatments">
-                                <span class="feature-icon">💎</span>
-                                استخدام مواد عالية الجودة في جميع العلاجات
-                            </li>
-                            <li data-ar="جهاز تصوير شعاعي محمول للتشخيص الدقيق" data-en="Portable X-ray device for accurate diagnosis">
-                                <span class="feature-icon">📱</span>
-                                جهاز تصوير شعاعي محمول للتشخيص الدقيق
-                            </li>
-                            <li data-ar="جهاز Apex Locator لتحديد طول القناة بدقة" data-en="Apex Locator device for precise root canal length determination">
-                                <span class="feature-icon">🎯</span>
-                                جهاز Apex Locator لتحديد طول القناة بدقة
-                            </li>
-                            <li data-ar="الالتزام الصارم بالأسس الأكاديمية والعلمية" data-en="Strict adherence to academic and scientific foundations">
-                                <span class="feature-icon">📚</span>
-                                الالتزام الصارم بالأسس الأكاديمية والعلمية
-                            </li>
-                        </ul>
-                        
-                        <div class="doctor-quote">
-                            <blockquote data-ar="&quot;هدفنا هو تقديم أفضل رعاية طبية لأسنانكم في بيئة مريحة وآمنة، مع الحرص على راحتكم وثقتكم في كل زيارة.&quot;" data-en="&quot;Our goal is to provide the best dental care in a comfortable and safe environment, ensuring your comfort and trust with every visit.&quot;">"هدفنا هو تقديم أفضل رعاية طبية لأسنانكم في بيئة مريحة وآمنة، مع الحرص على راحتكم وثقتكم في كل زيارة."</blockquote>
-                            <cite data-ar="- د. جوستينا يوسف التلي" data-en="- Dr. Justina Youssef Al-Tali">- د. جوستينا يوسف التلي</cite>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="section">
-            <div class="container">
-                <h2 data-ar="خدماتنا" data-en="Our Services">خدماتنا</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🦷</div>
-                        <h3 data-ar="ترميمات تجميلية" data-en="Cosmetic Restorations">ترميمات تجميلية</h3>
-                        <p data-ar="حشوات تجميلية بمواد عالية الجودة لاستعادة شكل ووظيفة الأسنان" data-en="Cosmetic fillings with high-quality materials to restore tooth shape and function">حشوات تجميلية بمواد عالية الجودة لاستعادة شكل ووظيفة الأسنان</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">👑</div>
-                        <h3 data-ar="جسور وتيجان وفينير" data-en="Bridges, Crowns & Veneers">جسور وتيجان وفينير</h3>
-                        <p data-ar="تركيبات ثابتة ومتحركة لتعويض الأسنان المفقودة وتحسين الابتسامة" data-en="Fixed and removable prosthetics to replace missing teeth and improve smile">تركيبات ثابتة ومتحركة لتعويض الأسنان المفقودة وتحسين الابتسامة</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🔧</div>
-                        <h3 data-ar="زراعة الأسنان" data-en="Dental Implants">زراعة الأسنان</h3>
-                        <p data-ar="حلول دائمة لتعويض الأسنان المفقودة بزراعات عالية الجودة" data-en="Permanent solutions for missing teeth with high-quality implants">حلول دائمة لتعويض الأسنان المفقودة بزراعات عالية الجودة</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">⚕️</div>
-                        <h3 data-ar="معالجة لبية" data-en="Root Canal Treatment">معالجة لبية</h3>
-                        <p data-ar="علاج عصب السن بدقة عالية باستخدام أحدث التقنيات" data-en="Precise root canal treatment using the latest techniques">علاج عصب السن بدقة عالية باستخدام أحدث التقنيات</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">📐</div>
-                        <h3 data-ar="تقويم الأسنان" data-en="Orthodontics">تقويم الأسنان</h3>
-                        <p data-ar="تصحيح اصطفاف الأسنان للحصول على ابتسامة مثالية" data-en="Correcting tooth alignment for a perfect smile">تصحيح اصطفاف الأسنان للحصول على ابتسامة مثالية</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🔨</div>
-                        <h3 data-ar="قلع الأسنان" data-en="Tooth Extraction">قلع الأسنان</h3>
-                        <p data-ar="إزالة الأسنان المتضررة بأمان وبأقل ألم ممكن" data-en="Safe removal of damaged teeth with minimal pain">إزالة الأسنان المتضررة بأمان وبأقل ألم ممكن</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">👶</div>
-                        <h3 data-ar="علاج الأطفال" data-en="Pediatric Dentistry">علاج الأطفال</h3>
-                        <p data-ar="رعاية أسنان الأطفال في بيئة مريحة وودودة" data-en="Children's dental care in a comfortable and friendly environment">رعاية أسنان الأطفال في بيئة مريحة وودودة</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Working Hours Section -->
-        <section id="hours" class="section">
-            <div class="container">
-                <h2 data-ar="ساعات العمل" data-en="Working Hours">ساعات العمل</h2>
-                <div class="hours-grid">
-                    <div class="hours-card">
-                        <h3 data-ar="أوقات الدوام" data-en="Working Hours">أوقات الدوام</h3>
-                        <ul>
-                            <li data-ar="الفترة الصباحية: 9:00 ص - 2:00 ظ" data-en="Morning: 9:00 AM - 2:00 PM">الفترة الصباحية: 9:00 ص - 2:00 ظ</li>
-                            <li data-ar="الفترة المسائية: 4:00 ع - 9:30 م" data-en="Evening: 4:00 PM - 9:30 PM">الفترة المسائية: 4:00 ع - 9:30 م</li>
-                            <li data-ar="أو حتى 10:00 مساءً حسب الحاجة" data-en="Or until 10:00 PM as needed">أو حتى 10:00 مساءً حسب الحاجة</li>
-                            <li style="color: #dc3545;" data-ar="مغلق يوم الأحد" data-en="Closed on Sundays">مغلق يوم الأحد</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="hours-card">
-                        <h3 data-ar="خدمات خاصة" data-en="Special Services">خدمات خاصة</h3>
-                        <ul>
-                            <li data-ar="معالجات تقويمية: الإثنين والأربعاء فقط" data-en="Orthodontic treatments: Mondays and Wednesdays only">معالجات تقويمية: الإثنين والأربعاء فقط</li>
-                            <li data-ar="الحالات الطارئة: مرحب بها دائماً" data-en="Emergency cases: Always welcome">الحالات الطارئة: مرحب بها دائماً</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="hours-card">
-                        <h3 data-ar="معلومات مهمة" data-en="Important Information">معلومات مهمة</h3>
-                        <ul>
-                            <li data-ar="الحجز المسبق مطلوب" data-en="Prior appointment required">الحجز المسبق مطلوب</li>
-                            <li data-ar="لا توجد مواقف سيارات خاصة" data-en="No private parking available">لا توجد مواقف سيارات خاصة</li>
-                            <li data-ar="يُرجى الحضور قبل 10 دقائق من الموعد" data-en="Please arrive 10 minutes before appointment">يُرجى الحضور قبل 10 دقائق من الموعد</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 data-ar="الحجز والتواصل" data-en="Contact & Booking">الحجز والتواصل</h2>
-                <div class="contact-content">
-                    <div>
-                        <h3 data-ar="احجز موعدك" data-en="Book Your Appointment">احجز موعدك</h3>
-                        <form id="bookingForm" onsubmit="handleBooking(event)">
-                            <div class="form-group">
-                                <label data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
-                                <input type="text" name="name" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
-                                <input type="tel" name="phone" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label data-ar="التاريخ المفضل" data-en="Preferred Date">التاريخ المفضل</label>
-                                <input type="date" name="date" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label data-ar="نوع الخدمة" data-en="Service Type">نوع الخدمة</label>
-                                <select name="service" required>
-                                    <option value="" data-ar="اختر الخدمة" data-en="Select Service">اختر الخدمة</option>
-                                    <option value="restoration" data-ar="ترميمات تجميلية" data-en="Cosmetic Restorations">ترميمات تجميلية</option>
-                                    <option value="crowns" data-ar="جسور وتيجان وفينير" data-en="Bridges, Crowns & Veneers">جسور وتيجان وفينير</option>
-                                    <option value="implants" data-ar="زراعة الأسنان" data-en="Dental Implants">زراعة الأسنان</option>
-                                    <option value="root-canal" data-ar="معالجة لبية" data-en="Root Canal Treatment">معالجة لبية</option>
-                                    <option value="orthodontics" data-ar="تقويم الأسنان" data-en="Orthodontics">تقويم الأسنان</option>
-                                    <option value="extraction" data-ar="قلع الأسنان" data-en="Tooth Extraction">قلع الأسنان</option>
-                                    <option value="pediatric" data-ar="علاج الأطفال" data-en="Pediatric Dentistry">علاج الأطفال</option>
-                                    <option value="emergency" data-ar="حالة طارئة" data-en="Emergency">حالة طارئة</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label data-ar="ملاحظات إضافية" data-en="Additional Notes">ملاحظات إضافية</label>
-                                <textarea name="notes" rows="4" placeholder="" data-ar-placeholder="أي معلومات إضافية تود إضافتها..." data-en-placeholder="Any additional information you'd like to add..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="cta-button" data-ar="إرسال طلب الحجز" data-en="Submit Booking Request">إرسال طلب الحجز</button>
-                        </form>
-                    </div>
-                    
-                    <div class="contact-info">
-                        <h3 data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h3>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">📞</span>
-                            <div>
-                                <h4 data-ar="الهاتف" data-en="Phone">الهاتف</h4>
-                                <p>+963938289397</p>
-                                <p data-ar="متاح للمكالمات والواتساب" data-en="Available for calls and WhatsApp">متاح للمكالمات والواتساب</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">✉️</span>
-                            <div>
-                                <h4 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h4>
-                                <p>joustinaaltalli@gmail.com</p>
-                                <p data-ar="نرد على الرسائل خلال 24 ساعة" data-en="We respond to messages within 24 hours">نرد على الرسائل خلال 24 ساعة</p>
-                            </div>
-                        </div>
-                        
-                <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <h4 data-ar="العنوان" data-en="Address">العنوان</h4>
-                                <p data-ar="دمشق، سوريا" data-en="Damascus, Syria">دمشق، سوريا</p>
-                                <p data-ar="سيتم تزويدكم بالعنوان التفصيلي عند الحجز" data-en="Detailed address will be provided upon booking">سيتم تزويدكم بالعنوان التفصيلي عند الحجز</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">⏰</span>
-                            <div>
-                                <h4 data-ar="أوقات الرد السريع" data-en="Quick Response Hours">أوقات الرد السريع</h4>
-                                <p data-ar="9:00 ص - 9:00 م" data-en="9:00 AM - 9:00 PM">9:00 ص - 9:00 م</p>
-                                <p data-ar="الحالات الطارئة 24/7" data-en="Emergency cases 24/7">الحالات الطارئة 24/7</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-     <!-- Gallery Section -->
-    <section id="gallery" class="section">
-        <div class="container">
-            <h2 data-ar="معرض أعمالنا" data-en="Our Work Gallery">معرض أعمالنا</h2>
-            <div class="gallery-treatments">
-                
-                <!-- Pediatric Dentistry -->
-                <div class="gallery-card">
-                    <div class="gallery-image" onclick="openImageModal(this)">
-                        <img src="طب أسنان الأطفال.jpg" alt="Pediatric Dentistry" data-ar-alt="طب أسنان الأطفال" data-en-alt="Pediatric Dentistry">
-                        <div class="image-placeholder">
-                            <span data-ar="طب أسنان الأطفال" data-en="Pediatric Dentistry">طب أسنان الأطفال</span>
-                        </div>
-                        <div class="zoom-indicator">🔍</div>
-                        <div class="gallery-overlay">
-                            <div class="gallery-icon">👶</div>
-                        </div>
-                    </div>
-                    <div class="gallery-content">
-                        <h3 data-ar="طب أسنان الأطفال" data-en="Pediatric Dentistry">طب أسنان الأطفال</h3>
-                        <p data-ar="التواصل اللطيف مع الطفل وجعله يتعامل بإيجابية مع المعالجة" data-en="Gentle conversations and connection with the child, making him/her act positively during treatment">التواصل اللطيف مع الطفل وجعله يتعامل بإيجابية مع المعالجة</p>
-                    </div>
-                </div>
-
-                <!-- Cleaning and Scaling -->
-                <div class="gallery-card">
-                    <div class="gallery-image" onclick="openImageModal(this)">
-                        <img src="تنظيف و تقليح .jpg" alt="Cleaning and Scaling" data-ar-alt="تنظيف وتقليح الأسنان" data-en-alt="Cleaning and Scaling">
-                        <div class="image-placeholder">
-                            <span data-ar="تنظيف وتقليح الأسنان" data-en="Cleaning and Scaling">تنظيف وتقليح الأسنان</span>
-                        </div>
-                        <div class="zoom-indicator">🔍</div>
-                        <div class="gallery-overlay">
-                            <div class="gallery-icon">✨</div>
-                        </div>
-                    </div>
-                    <div class="gallery-content">
-                        <h3 data-ar="تنظيف وتقليح الأسنان" data-en="Cleaning and Scaling">تنظيف وتقليح الأسنان</h3>
-                        <p data-ar="أولى خطوات المعالجة الناجحة تكون من خلال الحصول على بيئة فموية صحية" data-en="First step for successful treatment is gaining clean oral environment">أولى خطوات المعالجة الناجحة تكون من خلال الحصول على بيئة فموية صحية</p>
-                    </div>
-                </div>
-
-                <!-- Endodontic Treatment -->
-                <div class="gallery-card">
-                    <div class="gallery-image" onclick="openImageModal(this)">
-                        <img src="معالجات لبية.jpg" alt="Endodontic Treatment" data-ar-alt="معالجات لبية" data-en-alt="Endodontic Treatment">
-                        <div class="image-placeholder">
-                            <span data-ar="معالجات لبية" data-en="Endodontic Treatment">معالجات لبية</span>
-                        </div>
-                        <div class="zoom-indicator">🔍</div>
-                        <div class="gallery-overlay">
-                            <div class="gallery-icon">⚕️</div>
-                        </div>
-                    </div>
-                    <div class="gallery-content">
-                        <h3 data-ar="معالجات لبية" data-en="Endodontic Treatment">معالجات لبية</h3>
-                        <p data-ar="التخلص من الألم الشديد الذي يجعلك لا تنام ليلاً، الحل بأفضل التقنيات ضمن عيادتنا وبالطبع بخبرة مميزة" data-en="To get rid of severe pain that prevents you from sleeping, solution is here in our clinic with the best techniques, tools and for sure best experience">التخلص من الألم الشديد الذي يجعلك لا تنام ليلاً، الحل بأفضل التقنيات ضمن عيادتنا وبالطبع بخبرة مميزة</p>
-                    </div>
-                </div>
-
-                <!-- Extraction -->
-                <div class="gallery-card">
-                    <div class="gallery-image" onclick="openImageModal(this)">
-                        <img src="قلع الأسنان.jpg" alt="Tooth Extraction" data-ar-alt="قلع الأسنان" data-en-alt="Tooth Extraction">
-                        <div class="image-placeholder">
-                            <span data-ar="قلع الأسنان" data-en="Tooth Extraction">قلع الأسنان</span>
-                        </div>
-                        <div class="zoom-indicator">🔍</div>
-                        <div class="gallery-overlay">
-                            <div class="gallery-icon">🔧</div>
-                        </div>
-                    </div>
-                    <div class="gallery-content">
-                        <h3 data-ar="قلع الأسنان" data-en="Extraction">قلع الأسنان</h3>
-                        <p data-ar="سن استطبابه القلع وتريد التخدير دون الخوف من الآلام التالية للمعالجة" data-en="A hopeless tooth that is indicated for extraction with painless anesthesia">سن استطبابه القلع وتريد التخدير دون الخوف من الآلام التالية للمعالجة</p>
-                    </div>
-                </div>
-
-                <!-- Dental Restorations -->
-                <div class="gallery-card">
-                    <div class="gallery-image" onclick="openImageModal(this)">
-                        <img src="ترميمات تجميلية.jpg" alt="Dental Restorations" data-ar-alt="ترميمات تجميلية" data-en-alt="Dental Restorations">
-                        <div class="image-placeholder">
-                            <span data-ar="ترميمات تجميلية" data-en="Dental Restorations">ترميمات تجميلية</span>
-                        </div>
-                        <div class="zoom-indicator">🔍</div>
-                        <div class="gallery-overlay">
-                            <div class="gallery-icon">💎</div>
-                        </div>
-                    </div>
-                    <div class="gallery-content">
-                        <h3 data-ar="ترميمات تجميلية" data-en="Dental Restorations">ترميمات تجميلية</h3>
-                        <p data-ar="لدى وجود أي نخر - كسر - عيب في الأسنان حجماً، شكلاً وتريد مظهر جمالي ووظيفي، نقدم أفضل الترميمات" data-en="Caries - cracks - defect in shape, size and you want aesthetic and functional restoration, contact us">لدى وجود أي نخر - كسر - عيب في الأسنان حجماً، شكلاً وتريد مظهر جمالي ووظيفي، نقدم أفضل الترميمات</p>
-                    </div>
-                </div>
-
-                <!-- Implants -->
-                <div class="gallery-card">
-                    <div class="gallery-image" onclick="openImageModal(this)">
-                        <img src="جراحة و زرع الأسنان .jpg" alt="Dental Implants" data-ar-alt="جراحة وزرع الأسنان" data-en-alt="Dental Implants">
-                        <div class="image-placeholder">
-                            <span data-ar="جراحة وزرع الأسنان" data-en="Dental Implants">جراحة وزرع الأسنان</span>
-                        </div>
-                        <div class="zoom-indicator">🔍</div>
-                        <div class="gallery-overlay">
-                            <div class="gallery-icon">🦷</div>
-                        </div>
-                    </div>
-                    <div class="gallery-content">
-                        <h3 data-ar="جراحة وزرع الأسنان" data-en="Implants">جراحة وزرع الأسنان</h3>
-                        <p data-ar="سن أو أسنان مفقودة ومظهر غير جمالي، أفضل حل أمامك وهو زراعة الأسنان وبأفضل أنواع الزرعات والتقنيات" data-en="Tooth or teeth loss, non-aesthetic appearance, best solution is in front of you! Implants! With best implants and techniques">سن أو أسنان مفقودة ومظهر غير جمالي، أفضل حل أمامك وهو زراعة الأسنان وبأفضل أنواع الزرعات والتقنيات</p>
-                    </div>
-                </div>
-
-                <!-- Orthodontic Treatment -->
-                <div class="gallery-card">
-                    <div class="gallery-image" onclick="openImageModal(this)">
-                        <img src="تقويم الأسنان .jpg" alt="Orthodontic Treatment" data-ar-alt="تقويم الأسنان" data-en-alt="Orthodontic Treatment">
-                        <div class="image-placeholder">
-                            <span data-ar="تقويم الأسنان" data-en="Orthodontic Treatment">تقويم الأسنان</span>
-                        </div>
-                        <div class="zoom-indicator">🔍</div>
-                        <div class="gallery-overlay">
-                            <div class="gallery-icon">📐</div>
-                        </div>
-                    </div>
-                    <div class="gallery-content">
-                        <h3 data-ar="تقويم الأسنان" data-en="Orthodontic Treatment">تقويم الأسنان</h3>
-                        <p data-ar="لديك أسنان مزدحمة أو فراغات في أسنانك، بعض الأسنان لم تظهر بعد! نوفر لك جميع أنواع الأجهزة التقويمية المتحركة والثابتة" data-en="Spaces between your teeth, impacted teeth, we offer all types of orthodontic braces (removable, fixed, ...)">لديك أسنان مزدحمة أو فراغات في أسنانك، بعض الأسنان لم تظهر بعد! نوفر لك جميع أنواع الأجهزة التقويمية المتحركة والثابتة</p>
-                    </div>
-                </div>
-
-            </div>
-            
-      
-        </section>
-
-        <!-- Blog Section -->
-        <section id="blog" class="section">
-            <div class="container">
-                <h2 data-ar="المدونة والتثقيف" data-en="Blog & Education">المدونة والتثقيف</h2>
-                
-                <article class="blog-post">
-                    <h3 data-ar="أهمية تنظيف الأسنان اليومي: دليلك الشامل لابتسامة صحية" data-en="The Importance of Daily Teeth Cleaning: Your Complete Guide to a Healthy Smile">أهمية تنظيف الأسنان اليومي: دليلك الشامل لابتسامة صحية</h3>
-                    <div class="blog-date" data-ar="تاريخ النشر: 20 يونيو 2025" data-en="Published: June 20, 2025">تاريخ النشر: 20 يونيو 2025</div>
-                    
-                    <p data-ar="يعتبر تنظيف الأسنان اليومي من أهم العادات الصحية التي يجب أن نمارسها للحفاظ على صحة الفم والأسنان. في هذا المقال، سنتعرف على الطريقة الصحيحة لتنظيف الأسنان والأدوات المناسبة لذلك." data-en="Daily teeth cleaning is one of the most important healthy habits we should practice to maintain oral and dental health. In this article, we'll learn about the correct way to clean teeth and the appropriate tools for it.">يعتبر تنظيف الأسنان اليومي من أهم العادات الصحية التي يجب أن نمارسها للحفاظ على صحة الفم والأسنان. في هذا المقال، سنتعرف على الطريقة الصحيحة لتنظيف الأسنان والأدوات المناسبة لذلك.</p>
-                    
-                    <h4 data-ar="الطريقة الصحيحة لتنظيف الأسنان:" data-en="The Correct Way to Clean Teeth:">الطريقة الصحيحة لتنظيف الأسنان:</h4>
-                    
-                    <p data-ar="1. استخدم فرشاة أسنان ناعمة أو متوسطة النعومة مع معجون أسنان يحتوي على الفلورايد." data-en="1. Use a soft or medium-soft toothbrush with fluoride toothpaste.">1. استخدم فرشاة أسنان ناعمة أو متوسطة النعومة مع معجون أسنان يحتوي على الفلورايد.</p>
-                    
-                    <p data-ar="2. نظف أسنانك لمدة دقيقتين على الأقل، مرتين يومياً (صباحاً ومساءً)." data-en="2. Brush your teeth for at least two minutes, twice daily (morning and evening).">2. نظف أسنانك لمدة دقيقتين على الأقل، مرتين يومياً (صباحاً ومساءً).</p>
-                    
-                    <p data-ar="3. استخدم حركات دائرية لطيفة بدلاً من الحركات الأفقية القوية التي قد تضر باللثة." data-en="3. Use gentle circular motions instead of strong horizontal movements that may harm the gums.">3. استخدم حركات دائرية لطيفة بدلاً من الحركات الأفقية القوية التي قد تضر باللثة.</p>
-                    
-                    <p data-ar="4. لا تنس تنظيف اللسان للتخلص من البكتيريا المسببة لرائحة الفم الكريهة." data-en="4. Don't forget to clean your tongue to eliminate bacteria that cause bad breath.">4. لا تنس تنظيف اللسان للتخلص من البكتيريا المسببة لرائحة الفم الكريهة.</p>
-                    
-                    <h4 data-ar="نصائح إضافية مهمة:" data-en="Important Additional Tips:">نصائح إضافية مهمة:</h4>
-                    
-                    <p data-ar="• استخدم خيط الأسنان يومياً لإزالة بقايا الطعام من بين الأسنان." data-en="• Use dental floss daily to remove food debris between teeth.">• استخدم خيط الأسنان يومياً لإزالة بقايا الطعام من بين الأسنان.</p>
-                    
-                    <p data-ar="• استخدم غسول الفم المضاد للبكتيريا للحصول على حماية إضافية." data-en="• Use antibacterial mouthwash for additional protection.">• استخدم غسول الفم المضاد للبكتيريا للحصول على حماية إضافية.</p>
-                    
-                    <p data-ar="• قم بتغيير فرشاة الأسنان كل 3-4 أشهر أو عند تآكل الشعيرات." data-en="• Replace your toothbrush every 3-4 months or when bristles wear out.">• قم بتغيير فرشاة الأسنان كل 3-4 أشهر أو عند تآكل الشعيرات.</p>
-                    
-                    <p data-ar="• زوروا طبيب الأسنان كل 6 أشهر للفحص الدوري والتنظيف المهني." data-en="• Visit your dentist every 6 months for regular checkups and professional cleaning.">• زوروا طبيب الأسنان كل 6 أشهر للفحص الدوري والتنظيف المهني.</p>
-                    
-                    <p data-ar="تذكروا أن العناية بالأسنان استثمار في صحتكم العامة، فالفم الصحي يساهم في الصحة العامة للجسم. لأي استفسارات إضافية، لا تترددوا في التواصل معنا." data-en="Remember that dental care is an investment in your overall health, as a healthy mouth contributes to overall body health. For any additional inquiries, don't hesitate to contact us.">تذكروا أن العناية بالأسنان استثمار في صحتكم العامة، فالفم الصحي يساهم في الصحة العامة للجسم. لأي استفسارات إضافية، لا تترددوا في التواصل معنا.</p>
-                </article>
-                
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button class="cta-button" onclick="showSection('contact')" data-ar="هل لديك سؤال؟ تواصل معنا" data-en="Have a Question? Contact Us">هل لديك سؤال؟ تواصل معنا</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Image Modal -->
-    <div id="imageModal" class="image-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeImageModal()">&times;</button>
-            <img id="modalImage" class="modal-image" src="" alt="">
-            <div class="modal-info">
-                <h3 id="modalTitle"></h3>
-                <p id="modalDescription"></p>
-            </div>
-        </div>
-    </div>
-
-   <!-- Footer -->
-<footer>
-    <div class="container">
-        <p data-ar="© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب الأسنان. جميع الحقوق محفوظة." data-en="© 2025 Dr.J Dental Clinic - Dr. Justina Youssef Al-Tali Dental Clinic. All rights reserved.">© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب الأسنان. جميع الحقوق محفوظة.</p>
-        <p data-ar="مصممة بعناية لتقديم أفضل تجربة للمرضى" data-en="Carefully designed to provide the best patient experience">مصممة بعناية لتقديم أفضل تجربة للمرضى</p>
+    <div class="redirect-container">
+        <div class="logo">Dr.J Dental Clinic</div>
+        <div class="subtitle">عيادة د. جوستينا لطب الأسنان</div>
         
-        <!-- Designer Credit -->
-        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
-            <p style="font-size: 0.9rem; opacity: 0.8;">
-                <span data-ar="تم التصميم والتطوير بواسطة" data-en="Designed & Developed by">تم التصميم والتطوير بواسطة</span>
-                <a href="https://habeebandraws.vercel.app/" target="_blank" 
-                   style="color: #87ceeb; text-decoration: none; font-weight: bold; transition: color 0.3s;"
-                   onmouseover="this.style.color='#ffffff'" 
-                   onmouseout="this.style.color='#87ceeb'">
-                    Habeeb Andraws
-                </a>
-            </p>
+        <div class="message">
+            <p>مرحباً بكم في الموقع الجديد المحسن!</p>
+            <p>Welcome to our new and improved website!</p>
         </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🌐</div>
+                <div>صفحات منفصلة<br>Separate Pages</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <div>تصميم متجاوب<br>Responsive Design</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <div>أداء محسن<br>Better Performance</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <div>تجربة أفضل<br>Better Experience</div>
+            </div>
+        </div>
+        
+        <div>
+            <a href="pages/index.html" class="redirect-button">
+                دخول الموقع الجديد<br>
+                <small>Enter New Website</small>
+            </a>
+        </div>
+        
+        <div class="countdown">
+            <div class="loading"></div>
+            <span id="countdown-text">سيتم التوجيه تلقائياً خلال <span id="countdown">5</span> ثوانٍ</span>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        
+        <a href="pages/index.html" class="skip-link">تخطي الانتظار | Skip waiting</a>
     </div>
-</footer>
 
     <script>
-        let currentLanguage = 'ar';
+        // Auto redirect after 5 seconds
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdown');
+        const countdownText = document.getElementById('countdown-text');
         
-        // Navigation functions
-        function showSection(sectionName) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Show selected section
-            const targetSection = document.getElementById(sectionName);
-            if (targetSection) {
-                targetSection.classList.add('active');
-            }
-            
-            // Close mobile menu if open
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.remove('active');
-        }
-        
-        function toggleMobileMenu() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('active');
-        }
-        
-        // Language toggle function
-        function toggleLanguage() {
-            const html = document.documentElement;
-            const langButton = document.querySelector('.lang-toggle');
-            
-            if (currentLanguage === 'ar') {
-                // Switch to English
-                currentLanguage = 'en';
-                html.setAttribute('lang', 'en');
-                html.setAttribute('dir', 'ltr');
-                langButton.textContent = 'العربية';
-                updateContent('en');
-            } else {
-                // Switch to Arabic
-                currentLanguage = 'ar';
-                html.setAttribute('lang', 'ar');
-                html.setAttribute('dir', 'rtl');
-                langButton.textContent = 'EN';
-                updateContent('ar');
-            }
-        }
-        
-        // Update content based on language
-        function updateContent(lang) {
-            const elements = document.querySelectorAll('[data-ar][data-en]');
-            elements.forEach(element => {
-                if (lang === 'ar') {
-                    element.textContent = element.getAttribute('data-ar');
-                } else {
-                    element.textContent = element.getAttribute('data-en');
-                }
-            });
-            
-            // Update placeholders
-            const placeholderElements = document.querySelectorAll('[data-ar-placeholder][data-en-placeholder]');
-            placeholderElements.forEach(element => {
-                if (lang === 'ar') {
-                    element.setAttribute('placeholder', element.getAttribute('data-ar-placeholder'));
-                } else {
-                    element.setAttribute('placeholder', element.getAttribute('data-en-placeholder'));
-                }
-            });
-            
-            // Update select options
-            const selectOptions = document.querySelectorAll('option[data-ar][data-en]');
-            selectOptions.forEach(option => {
-                if (lang === 'ar') {
-                    option.textContent = option.getAttribute('data-ar');
-                } else {
-                    option.textContent = option.getAttribute('data-en');
-                }
-            });
-            
-            // Update image placeholders
-            const imagePlaceholders = document.querySelectorAll('.image-placeholder span[data-ar][data-en]');
-            imagePlaceholders.forEach(placeholder => {
-                if (lang === 'ar') {
-                    placeholder.textContent = placeholder.getAttribute('data-ar');
-                } else {
-                    placeholder.textContent = placeholder.getAttribute('data-en');
-                }
-            });
-        }
-        
-        // Handle booking form submission
-        function handleBooking(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const bookingData = {
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                date: formData.get('date'),
-                service: formData.get('service'),
-                notes: formData.get('notes')
-            };
-            
-            // Create WhatsApp message
-            const message = currentLanguage === 'ar' 
-                ? `مرحباً، أود حجز موعد:\n\nالاسم: ${bookingData.name}\nرقم الهاتف: ${bookingData.phone}\nالتاريخ المفضل: ${bookingData.date}\nنوع الخدمة: ${getServiceName(bookingData.service, 'ar')}\nملاحظات: ${bookingData.notes || 'لا توجد'}`
-                : `Hello, I would like to book an appointment:\n\nName: ${bookingData.name}\nPhone: ${bookingData.phone}\nPreferred Date: ${bookingData.date}\nService Type: ${getServiceName(bookingData.service, 'en')}\nNotes: ${bookingData.notes || 'None'}`;
-            
-            const whatsappUrl = `https://wa.me/962791234567?text=${encodeURIComponent(message)}`;
-            
-            // Show confirmation and redirect
-            const confirmMessage = currentLanguage === 'ar' 
-                ? 'سيتم توجيهك إلى الواتساب لإرسال طلب الحجز. هل تريد المتابعة؟'
-                : 'You will be redirected to WhatsApp to send the booking request. Do you want to continue?';
-            
-            if (confirm(confirmMessage)) {
-                window.open(whatsappUrl, '_blank');
-            }
-        }
-        
-        // Get service name in specified language
-        function getServiceName(serviceValue, lang) {
-            const services = {
-                'restoration': { ar: 'ترميمات تجميلية', en: 'Cosmetic Restorations' },
-                'crowns': { ar: 'جسور وتيجان وفينير', en: 'Bridges, Crowns & Veneers' },
-                'implants': { ar: 'زراعة الأسنان', en: 'Dental Implants' },
-                'root-canal': { ar: 'معالجة لبية', en: 'Root Canal Treatment' },
-                'orthodontics': { ar: 'تقويم الأسنان', en: 'Orthodontics' },
-                'extraction': { ar: 'قلع الأسنان', en: 'Tooth Extraction' },
-                'pediatric': { ar: 'علاج الأطفال', en: 'Pediatric Dentistry' },
-                'emergency': { ar: 'حالة طارئة', en: 'Emergency' }
-            };
-            
-            return services[serviceValue] ? services[serviceValue][lang] : serviceValue;
-        }
-        
-        // Image preview function
-        function previewImage(input) {
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                const preview = document.getElementById('imagePreview');
-                const previewImg = document.getElementById('previewImg');
-                
-                reader.onload = function(e) {
-                    previewImg.src = e.target.result;
-                    preview.style.display = 'block';
-                    
-                    // Show instructions for adding the image
-                    const instructions = currentLanguage === 'ar' 
-                        ? 'تم تحميل الصورة بنجاح! لإضافتها بشكل دائم، يرجى حفظ الصورة في مجلد المشروع وتحديث الكود.'
-                        : 'Image loaded successfully! To add it permanently, please save the image to the project folder and update the code.';
-                    
-                    setTimeout(() => {
-                        alert(instructions);
-                    }, 500);
-                };
-                
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        
-        // Image modal functions
-        function openImageModal(galleryImageElement) {
-            const modal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalDescription = document.getElementById('modalDescription');
-            
-            // Get image source and info
-            const img = galleryImageElement.querySelector('img');
-            const galleryCard = galleryImageElement.closest('.gallery-card');
-            const title = galleryCard.querySelector('.gallery-content h3');
-            const description = galleryCard.querySelector('.gallery-content p');
-            
-            if (img && img.src && !img.src.includes('placeholder')) {
-                // Set modal content
-                modalImage.src = img.src;
-                modalImage.alt = img.alt;
-                modalTitle.textContent = title ? title.textContent : '';
-                modalDescription.textContent = description ? description.textContent : '';
-                
-                // Show modal
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-                
-                // Add keyboard event listener for ESC key
-                document.addEventListener('keydown', handleModalKeydown);
-            }
-        }
-        
-        function closeImageModal() {
-            const modal = document.getElementById('imageModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Restore scrolling
-            
-            // Remove keyboard event listener
-            document.removeEventListener('keydown', handleModalKeydown);
-        }
-        
-        function handleModalKeydown(event) {
-            if (event.key === 'Escape') {
-                closeImageModal();
-            }
-        }
-        
-        // Close modal when clicking outside the image
-        document.getElementById('imageModal').addEventListener('click', function(event) {
-                    const modal = document.getElementById('imageModal');
-                    if (event.target === modal) {
-                        closeImageModal();
+        // Check if pages directory exists
+        function checkPagesDirectory() {
+            fetch('pages/index.html', { method: 'HEAD' })
+                .then(response => {
+                    if (!response.ok) {
+                        // If pages/index.html doesn't exist, show error message
+                        countdownText.innerHTML = 'خطأ: لم يتم العثور على الصفحة | Error: Page not found';
+                        clearInterval(timer);
                     }
+                })
+                .catch(() => {
+                    // Fallback - continue with redirect anyway
+                    console.log('Could not verify pages directory, continuing with redirect...');
                 });
-        
-        // Add touch support for mobile devices
-        document.getElementById('imageModal').addEventListener('touchstart', function(event) {
-                    const modal = document.getElementById('imageModal');
-                    if (event.target === modal) {
-                        closeImageModal();
-                    }
-                });
-        
-        // Image handling functions
-        function handleImageError(img) {
-            // If image fails to load, show a placeholder
-            img.style.display = 'none';
-            const placeholder = img.parentElement.querySelector('.image-placeholder');
-            if (placeholder) {
-                placeholder.style.display = 'flex';
-            } else {
-                // Create placeholder if it doesn't exist
-                const newPlaceholder = document.createElement('div');
-                newPlaceholder.className = 'image-placeholder';
-                newPlaceholder.style.cssText = `
-                    width: 100%;
-                    height: 100%;
-                    background: #e9ecef;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: #6c757d;
-                    font-size: 1rem;
-                `;
-                newPlaceholder.textContent = currentLanguage === 'ar' ? 'صورة غير متوفرة' : 'Image not available';
-                img.parentElement.appendChild(newPlaceholder);
-            }
         }
-
-        function optimizeImages() {
-            // Get all gallery images and optimize them
-            const galleryImages = document.querySelectorAll('.gallery-image img');
-            galleryImages.forEach(img => {
-                // Add error handling
-                img.onerror = function() {
-                    handleImageError(this);
-                };
+        
+        // Start checking
+        checkPagesDirectory();
+        
+        const timer = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(timer);
+                countdownText.innerHTML = 'جاري التوجيه... | Redirecting...';
                 
-                // Add load success handling
-                img.onload = function() {
-                    this.classList.add('loaded');
-                    // Ensure proper sizing after load
-                    this.style.objectFit = 'cover';
-                    this.style.objectPosition = 'center';
-                };
-                
-                // Add loading attribute for better performance
-                img.loading = 'lazy';
-                
-                // Ensure images maintain aspect ratio
-                img.style.objectFit = 'cover';
-                img.style.objectPosition = 'center';
-                
-                // If image is already loaded (cached), add loaded class
-                if (img.complete && img.naturalHeight !== 0) {
-                    img.classList.add('loaded');
-                    img.style.objectFit = 'cover';
-                    img.style.objectPosition = 'center';
-                }
-            });
-        }
-
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set minimum date for booking to today
-            const dateInput = document.querySelector('input[name="date"]');
-            if (dateInput) {
-                const today = new Date().toISOString().split('T')[0];
-                dateInput.setAttribute('min', today);
+                // Add a small delay for better UX
+                setTimeout(() => {
+                    window.location.href = 'pages/index.html';
+                }, 500);
             }
-            
-            // Optimize images
-            optimizeImages();
-            
-            // Handle clicks outside mobile menu to close it
-            document.addEventListener('click', function(event) {
-                const navMenu = document.getElementById('navMenu');
-                const mobileToggle = document.querySelector('.mobile-menu-toggle');
-                
-                if (!navMenu.contains(event.target) && !mobileToggle.contains(event.target)) {
-                    navMenu.classList.remove('active');
-                }
-            });
+        }, 1000);
+        
+        // Allow manual redirect
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('redirect-button') || e.target.classList.contains('skip-link')) {
+                clearInterval(timer);
+                window.location.href = 'pages/index.html';
+            }
         });
         
-        // Smooth scrolling for better user experience
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'linear-gradient(135deg, rgba(44, 90, 160, 0.95), rgba(74, 144, 226, 0.95))';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #2c5aa0, #4a90e2)';
-                header.style.backdropFilter = 'none';
+        // Handle keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                clearInterval(timer);
+                window.location.href = 'pages/index.html';
             }
         });
+        
+        // Handle page visibility change (pause timer when tab is not active)
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearInterval(timer);
+            } else {
+                // Resume countdown if page becomes visible again
+                if (countdown > 0) {
+                    const newTimer = setInterval(() => {
+                        countdown--;
+                        countdownElement.textContent = countdown;
+                        
+                        if (countdown <= 0) {
+                            clearInterval(newTimer);
+                            countdownText.innerHTML = 'جاري التوجيه... | Redirecting...';
+                            setTimeout(() => {
+                                window.location.href = 'pages/index.html';
+                            }, 500);
+                        }
+                    }, 1000);
+                }
+            }
+        });
+        
+        // Add smooth animations
+        window.addEventListener('load', () => {
+            document.querySelector('.redirect-container').style.opacity = '1';
+        });
+        
+        // Preload the target page for faster navigation
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = 'pages/index.html';
+        document.head.appendChild(link);
     </script>
 </body>
 </html>

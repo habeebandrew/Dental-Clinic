@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - Dr.J Dental Clinic</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div>Dr.J Dental Clinic</div>
+                <div style="font-size: 0.8rem; font-weight: normal;">عيادة د. جوستينا لطب الأسنان</div>
+            </div>
+            
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                <li><a href="about.html" class="active" data-ar="من نحن" data-en="About">من نحن</a></li>
+                <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                <li><a href="hours.html" data-ar="ساعات العمل" data-en="Hours">ساعات العمل</a></li>
+                <li><a href="contact.html" data-ar="الحجز والتواصل" data-en="Contact">الحجز والتواصل</a></li>
+                <li><a href="gallery.html" data-ar="المعرض" data-en="Gallery">المعرض</a></li>
+                <li><a href="blog.html" data-ar="المدونة" data-en="Blog">المدونة</a></li>
+            </ul>
+            
+            <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 data-ar="من نحن" data-en="About Us">من نحن</h1>
+                <p data-ar="تعرف على د. جوستينا وفريق العمل المتخصص" data-en="Meet Dr. Justina and our specialized team">تعرف على د. جوستينا وفريق العمل المتخصص</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="doctor-image-container">
+                        <!-- صورة الدكتورة -->
+                        <div class="doctor-image">
+                            <img src="../assets/images/الصورة الشخصية.jpg" alt="Dr. Justina Youssef Al-Tali" 
+                                 data-ar-alt="د. جوستينا يوسف التلي" 
+                                 data-en-alt="Dr. Justina Youssef Al-Tali"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="image-placeholder" style="display: none;">
+                                <div class="placeholder-content">
+                                    <div class="placeholder-icon">👩‍⚕️</div>
+                                    <div class="placeholder-text">
+                                        <span data-ar="د. جوستينا يوسف التلي" data-en="Dr. Justina Youssef Al-Tali">د. جوستينا يوسف التلي</span>
+                                        <small data-ar="لإضافة الصورة: احفظ صورة الدكتورة باسم 'dr-justina-photo.jpg' في مجلد المشروع" 
+                                               data-en="To add photo: Save doctor's photo as 'dr-justina-photo.jpg' in project folder">
+                                            لإضافة الصورة: احفظ صورة الدكتورة باسم 'dr-justina-photo.jpg' في مجلد المشروع
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- شهادات ومؤهلات -->
+                        <div class="credentials">
+                            <div class="credential-item">
+                                <span class="credential-icon">🎓</span>
+                                <span data-ar="بكالوريوس طب الأسنان" data-en="Bachelor of Dental Surgery">بكالوريوس طب الأسنان</span>
+                            </div>
+                            <div class="credential-item">
+                                <span class="credential-icon">🏥</span>
+                                <span data-ar="+100 حالة سريرية" data-en="+100 Clinical Cases">+100 حالة سريرية</span>
+                            </div>
+                            <div class="credential-item">
+                                <span class="credential-icon">⭐</span>
+                                <span data-ar="خبرة متخصصة" data-en="Specialized Experience">خبرة متخصصة</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="doctor-info">
+                        <h2 data-ar="د. جوستينا يوسف التلي" data-en="Dr. Justina Youssef Al-Tali">د. جوستينا يوسف التلي</h2>
+                        <p class="doctor-title" data-ar="طبيبة أسنان متخصصة" data-en="Specialized Dentist">طبيبة أسنان متخصصة</p>
+                        
+                        <p class="doctor-description" data-ar="طبيبة أسنان متخصصة حاصلة على بكالوريوس في طب الأسنان وجراحتها، تتمتع بخبرة واسعة في مجال طب الأسنان مع أكثر من 100 عمل سريري خلال فترة الدراسة. نحرص على تقديم أفضل الخدمات الطبية بأعلى معايير الجودة والاحترافية." data-en="Specialized dentist with a Bachelor's degree in Dentistry and Oral Surgery, with extensive experience in dentistry with more than 100 clinical cases during studies. We strive to provide the best medical services with the highest standards of quality and professionalism.">طبيبة أسنان متخصصة حاصلة على بكالوريوس في طب الأسنان وجراحتها، تتمتع بخبرة واسعة في مجال طب الأسنان مع أكثر من 100 عمل سريري خلال فترة الدراسة. نحرص على تقديم أفضل الخدمات الطبية بأعلى معايير الجودة والاحترافية.</p>
+                        
+                        <h3 data-ar="ما يميز عيادتنا:" data-en="What Makes Our Clinic Special:">ما يميز عيادتنا:</h3>
+                        <ul class="clinic-features">
+                            <li data-ar="استخدام مواد عالية الجودة في جميع العلاجات" data-en="Using high-quality materials in all treatments">
+                                <span class="feature-icon">💎</span>
+                                استخدام مواد عالية الجودة في جميع العلاجات
+                            </li>
+                            <li data-ar="جهاز تصوير شعاعي محمول للتشخيص الدقيق" data-en="Portable X-ray device for accurate diagnosis">
+                                <span class="feature-icon">📱</span>
+                                جهاز تصوير شعاعي محمول للتشخيص الدقيق
+                            </li>
+                            <li data-ar="جهاز Apex Locator لتحديد طول القناة بدقة" data-en="Apex Locator device for precise root canal length determination">
+                                <span class="feature-icon">🎯</span>
+                                جهاز Apex Locator لتحديد طول القناة بدقة
+                            </li>
+                            <li data-ar="الالتزام الصارم بالأسس الأكاديمية والعلمية" data-en="Strict adherence to academic and scientific foundations">
+                                <span class="feature-icon">📚</span>
+                                الالتزام الصارم بالأسس الأكاديمية والعلمية
+                            </li>
+                        </ul>
+                        
+                        <div class="doctor-quote">
+                            <blockquote data-ar="&quot;هدفنا هو تقديم أفضل رعاية طبية لأسنانكم في بيئة مريحة وآمنة، مع الح��ص على راحتكم وثقتكم في كل زيارة.&quot;" data-en="&quot;Our goal is to provide the best dental care in a comfortable and safe environment, ensuring your comfort and trust with every visit.&quot;">"هدفنا هو تقديم أفضل رعاية طبية لأسنانكم في بيئة مريحة وآمنة، مع الحرص على راحتكم وثقتكم في كل زيارة."</blockquote>
+                            <cite data-ar="- د. جوستينا يوسف التلي" data-en="- Dr. Justina Youssef Al-Tali">- د. جوستينا يوسف التلي</cite>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values Section -->
+        <section class="values-section">
+            <div class="container">
+                <h2 data-ar="قيمنا ومبادئنا" data-en="Our Values & Principles">قيمنا ومبادئنا</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🎯</div>
+                        <h3 data-ar="الدقة" data-en="Precision">الدقة</h3>
+                        <p data-ar="نحرص على تقديم أدق الخدمات الطبية باستخدام أحدث التقنيات والمعدات المتطورة" data-en="We ensure the most precise medical services using the latest technologies and advanced equipment">نحرص على تقديم أدق الخدمات الطبية باستخدام أحدث التقنيات والمعدات المتطورة</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">❤️</div>
+                        <h3 data-ar="الإنسانية" data-en="Humanity">الإنسانية</h3>
+                        <p data-ar="نتعامل مع كل مريض بكل احترام وتفهم لاحتياجاته الخاصة ونوفر بيئة مريحة وآمنة" data-en="We treat every patient with respect and understanding of their special needs and provide a comfortable and safe environment">نتعامل مع كل مريض بكل احترام وتفهم لاحتياجاته الخاصة ونوفر بيئة مريحة وآمنة</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h3 data-ar="الثقة" data-en="Trust">الثقة</h3>
+                        <p data-ar="نبني علاقة ثقة طويلة الأمد مع مرضانا من خلال الشفافية والصدق في التعامل" data-en="We build long-term trust relationships with our patients through transparency and honesty in dealing">نبني علاقة ثقة طويلة الأمد مع مرضا��ا من خلال الشفافية والصدق في التعامل</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">⭐</div>
+                        <h3 data-ar="التميز" data-en="Excellence">التميز</h3>
+                        <p data-ar="نسعى دائماً للتميز في كل ما نقدمه من خدمات طبية ونواكب أحدث التطورات في المجال" data-en="We always strive for excellence in all the medical services we provide and keep up with the latest developments in the field">نسعى دائماً للتميز في كل ما نقدمه من خدمات طبية ونواكب أحدث التطورات في المجال</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 data-ar="هل أنت مستعد لبدء رحلة العناية بأسنانك؟" data-en="Are you ready to start your dental care journey?">هل أنت مستعد لبدء رحلة العناية بأسنانك؟</h2>
+                <p data-ar="احجز موعدك اليوم واحصل على استشارة مجانية" data-en="Book your appointment today and get a free consultation">احجز موعدك اليوم واحصل على استشارة مجانية</p>
+                <a href="contact.html" class="cta-button" data-ar="احجز موعدك الآن" data-en="Book Your Appointment Now">احجز موعدك الآن</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-ar="عيادة د. جوستينا" data-en="Dr. Justina's Clinic">عيادة د. جوستينا</h3>
+                    <p data-ar="نقدم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية" data-en="We provide dental services with the highest standards of quality and professionalism">نقدم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                        <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                        <li><a href="contact.html" data-ar="التواصل" data-en="Contact">التواصل</a></li>
+                        <li><a href="gallery.html" data-ar="المعرض" data-en="Gallery">المعرض</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-ar="معلومات التواصل" data-en="Contact Info">معلومات التواصل</h3>
+                    <p data-ar="الهاتف: +963 938 289 397" data-en="Phone: +963 938 289 397">الهاتف: +963 938 289 397</p>
+                    <p data-ar="البريد: joustinaaltalli@gmail.com" data-en="Email: joustinaaltalli@gmail.com">البريد: joustinaaltalli@gmail.com</p>
+                    <p data-ar="العنوان: دمشق، سوريا" data-en="Address: Damascus, Syria">العنوان: دمشق، سوريا</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-ar="© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب الأسنان. جميع الحقوق محفوظة." data-en="© 2025 Dr.J Dental Clinic - Dr. Justina Youssef Al-Tali Dental Clinic. All rights reserved.">© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب الأسنان. جميع الحقوق محفوظة.</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <p style="font-size: 0.9rem; opacity: 0.8;">
+                        <span data-ar="تم التصميم والتطوير بواسطة" data-en="Designed & Developed by">تم التصميم والتطوير بواسطة</span>
+                        <a href="https://habeebandraws.vercel.app/" target="_blank" 
+                           style="color: #87ceeb; text-decoration: none; font-weight: bold; transition: color 0.3s;"
+                           onmouseover="this.style.color='#ffffff'" 
+                           onmouseout="this.style.color='#87ceeb'">
+                            Habeeb Andraws
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

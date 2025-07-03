@@ -1,0 +1,661 @@
+/* Responsive Design */
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .page-header h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Medium screens (992px to 1199px) */
+@media (max-width: 1199px) {
+    .gallery-treatments {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .about-content {
+        gap: 2rem;
+    }
+    
+    .contact-content {
+        gap: 2rem;
+    }
+}
+
+/* Small laptops and tablets (768px to 991px) */
+@media (max-width: 991px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .nav-menu {
+        gap: 1.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-treatments {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .gallery-image {
+        height: 220px;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-preview-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .emergency-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .schedule-table {
+        font-size: 0.9rem;
+    }
+    
+    .schedule-header,
+    .schedule-row {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+    .schedule-header > div,
+    .schedule-row > div {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        background: rgba(44, 90, 160, 0.95);
+        padding: 1rem;
+        border-radius: 10px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 4rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .page-header {
+        padding: 3rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .cards-grid,
+    .services-grid,
+    .hours-grid,
+    .values-grid,
+    .features-grid,
+    .tips-grid,
+    .faq-grid,
+    .quick-contact-grid,
+    .equipment-grid,
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .gallery-treatments {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .gallery-image {
+        height: 200px;
+    }
+    
+    .gallery-content {
+        padding: 1rem;
+    }
+    
+    .gallery-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-content p {
+        font-size: 0.9rem;
+    }
+    
+    .services-preview {
+        grid-template-columns: 1fr;
+    }
+    
+    .before-after-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .doctor-image {
+        height: 300px;
+    }
+    
+    .about-image {
+        height: 300px;
+    }
+    
+    .filter-buttons {
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .schedule-table {
+        font-size: 0.8rem;
+        overflow-x: auto;
+    }
+    
+    .schedule-header,
+    .schedule-row {
+        min-width: 600px;
+    }
+    
+    .emergency-card {
+        padding: 2rem;
+    }
+    
+    .emergency-icon {
+        font-size: 3rem;
+    }
+    
+    .emergency-phone {
+        font-size: 1.5rem;
+    }
+    
+    .emergency-symbol {
+        font-size: 6rem;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+        max-height: 85%;
+        margin: 2rem auto;
+    }
+    
+    .modal-close {
+        top: -35px;
+        font-size: 1.5rem;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .modal-info {
+        bottom: -50px;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .modal-image {
+        max-width: 100%;
+        max-height: 70vh;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .tip-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .tip-number {
+        align-self: center;
+    }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    header {
+        padding: 0.8rem 0;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-header {
+        padding: 2.5rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card,
+    .service-card,
+    .hours-card,
+    .value-card,
+    .feature-item,
+    .tip-card,
+    .faq-item,
+    .quick-contact-item,
+    .equipment-card,
+    .blog-card {
+        padding: 1.5rem;
+    }
+    
+    .gallery-treatments {
+        gap: 1rem;
+    }
+    
+    .gallery-image {
+        height: 180px;
+    }
+    
+    .gallery-content {
+        padding: 0.8rem;
+    }
+    
+    .gallery-icon {
+        font-size: 2.5rem;
+    }
+    
+    .doctor-image,
+    .about-image {
+        height: 250px;
+    }
+    
+    .doctor-image-container {
+        gap: 1rem;
+    }
+    
+    .credentials {
+        gap: 0.8rem;
+    }
+    
+    .credential-item {
+        padding: 0.8rem;
+    }
+    
+    .clinic-features li {
+        padding: 0.8rem;
+    }
+    
+    .filter-buttons {
+        gap: 0.3rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .before-after-images {
+        grid-template-columns: 1fr;
+    }
+    
+    .before-image,
+    .after-image {
+        height: 150px;
+    }
+    
+    .equipment-image {
+        height: 150px;
+    }
+    
+    .emergency-card {
+        padding: 1.5rem;
+    }
+    
+    .emergency-icon {
+        font-size: 2.5rem;
+    }
+    
+    .emergency-phone {
+        font-size: 1.3rem;
+    }
+    
+    .emergency-symbol {
+        font-size: 4rem;
+    }
+    
+    .hours-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .time-slot {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .schedule-header,
+    .schedule-row {
+        grid-template-columns: 1fr 1fr;
+        min-width: auto;
+    }
+    
+    .schedule-header .service-header,
+    .schedule-row .service-cell {
+        grid-column: 1 / -1;
+        border-top: 1px solid #eee;
+    }
+    
+    .modal-content {
+        max-width: 98%;
+        max-height: 80%;
+        margin: 1rem auto;
+    }
+    
+    .modal-close {
+        top: -30px;
+        font-size: 1.3rem;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .modal-info {
+        bottom: -45px;
+        padding: 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    .modal-image {
+        max-height: 60vh;
+    }
+    
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-section p {
+        font-size: 1rem;
+    }
+    
+    .newsletter-content h2 {
+        font-size: 2rem;
+    }
+    
+    .newsletter-form {
+        max-width: 100%;
+    }
+    
+    .blog-post.featured {
+        padding: 1.5rem;
+    }
+    
+    .post-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .post-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .tip-item {
+        padding: 0.8rem;
+    }
+    
+    .additional-tips li {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .conclusion {
+        padding: 1.5rem;
+    }
+}
+
+/* Extra small devices (320px and below) */
+@media (max-width: 320px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .service-icon,
+    .value-icon,
+    .feature-icon,
+    .tip-icon,
+    .quick-icon {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-image {
+        height: 150px;
+    }
+    
+    .doctor-image,
+    .about-image {
+        height: 200px;
+    }
+    
+    .emergency-phone {
+        font-size: 1.1rem;
+    }
+    
+    .newsletter-content h2,
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* High DPI screens optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .gallery-image img,
+    .doctor-image img,
+    .about-image img,
+    .equipment-image img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .page-header {
+        padding: 2rem 0;
+    }
+    
+    .modal-content {
+        max-height: 95%;
+    }
+    
+    .modal-image {
+        max-height: 80vh;
+    }
+}
+
+/* Print styles */
+@media print {
+    header,
+    footer,
+    .cta-section,
+    .newsletter,
+    .mobile-menu-toggle,
+    .lang-toggle,
+    .filter-buttons,
+    .modal-close,
+    .zoom-indicator {
+        display: none !important;
+    }
+    
+    main {
+        margin-top: 0;
+    }
+    
+    .page-header {
+        background: none;
+        color: #333;
+    }
+    
+    .hero {
+        background: none;
+        color: #333;
+    }
+    
+    .gallery-overlay {
+        display: none;
+    }
+    
+    .card,
+    .service-card,
+    .blog-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark mode support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+    /* Dark mode styles can be added here if needed */
+}
+
+/* Focus styles for better accessibility */
+@media (any-hover: hover) {
+    .nav-menu a:focus,
+    .cta-button:focus,
+    .service-btn:focus,
+    .submit-btn:focus,
+    .filter-btn:focus,
+    .emergency-btn:focus {
+        outline: 2px solid #87ceeb;
+        outline-offset: 2px;
+    }
+}
+
+/* Touch device optimizations */
+@media (any-pointer: coarse) {
+    .nav-menu a,
+    .cta-button,
+    .service-btn,
+    .submit-btn,
+    .filter-btn,
+    .emergency-btn {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .gallery-card {
+        cursor: pointer;
+    }
+    
+    .quick-contact-item {
+        min-height: 120px;
+    }
+}

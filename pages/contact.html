@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحجز والتواصل - Dr.J Dental Clinic</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div>Dr.J Dental Clinic</div>
+                <div style="font-size: 0.8rem; font-weight: normal;">عيادة د. جوستينا لطب الأسنان</div>
+            </div>
+            
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+                <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                <li><a href="hours.html" data-ar="ساعات العمل" data-en="Hours">ساعات العمل</a></li>
+                <li><a href="contact.html" class="active" data-ar="الحجز والتواصل" data-en="Contact">الحجز والتواصل</a></li>
+                <li><a href="gallery.html" data-ar="المعرض" data-en="Gallery">المعرض</a></li>
+                <li><a href="blog.html" data-ar="المدونة" data-en="Blog">المدونة</a></li>
+            </ul>
+            
+            <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 data-ar="الحجز والتواصل" data-en="Contact & Booking">الحجز والتواصل</h1>
+                <p data-ar="احجز موعدك أو تواصل معنا للاستفسارات" data-en="Book your appointment or contact us for inquiries">احجز موعدك أو تواصل معنا للاستفسارات</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <!-- Booking Form -->
+                    <div class="booking-form-container">
+                        <h2 data-ar="احجز موعدك" data-en="Book Your Appointment">احجز موعدك</h2>
+                        <form id="bookingForm" class="booking-form" onsubmit="handleBooking(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
+                                    <input type="text" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
+                                    <input type="tel" name="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label data-ar="التاريخ المفضل" data-en="Preferred Date">التاريخ المفضل</label>
+                                    <input type="date" name="date" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label data-ar="الوقت المفضل" data-en="Preferred Time">الوقت المفضل</label>
+                                    <select name="time" required>
+                                        <option value="" data-ar="اختر الوقت" data-en="Select Time">اختر الوقت</option>
+                                        <option value="morning" data-ar="الفترة الصباحية (9:00 ص - 2:00 ظ)" data-en="Morning Session (9:00 AM - 2:00 PM)">الفترة الصباحية (9:00 ص - 2:00 ظ)</option>
+                                        <option value="evening" data-ar="الفترة المسائية (4:00 ع - 9:30 م)" data-en="Evening Session (4:00 PM - 9:30 PM)">الفترة المسائية (4:00 ع - 9:30 م)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label data-ar="نوع الخدمة" data-en="Service Type">نوع الخدمة</label>
+                                <select name="service" required>
+                                    <option value="" data-ar="اختر الخدمة" data-en="Select Service">اختر الخدمة</option>
+                                    <option value="consultation" data-ar="استشارة عامة" data-en="General Consultation">استشارة عامة</option>
+                                    <option value="restoration" data-ar="ترميمات تجميلية" data-en="Cosmetic Restorations">ترميمات تجميلية</option>
+                                    <option value="crowns" data-ar="جسور وتيجان وفينير" data-en="Bridges, Crowns & Veneers">جسور وتيجان وفينير</option>
+                                    <option value="implants" data-ar="زراعة الأسنان" data-en="Dental Implants">زراعة الأسنان</option>
+                                    <option value="root-canal" data-ar="معالجة لبية" data-en="Root Canal Treatment">معالجة لبية</option>
+                                    <option value="orthodontics" data-ar="تقويم الأسنان" data-en="Orthodontics">تقويم الأسنان</option>
+                                    <option value="extraction" data-ar="قلع الأسنان" data-en="Tooth Extraction">قلع الأسنان</option>
+                                    <option value="pediatric" data-ar="علاج الأطفال" data-en="Pediatric Dentistry">علاج الأطفال</option>
+                                    <option value="cleaning" data-ar="تنظيف وتقليح" data-en="Cleaning & Scaling">تنظيف وتقليح</option>
+                                    <option value="emergency" data-ar="حالة طارئة" data-en="Emergency">حالة طارئة</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label data-ar="ملاحظات إضافية" data-en="Additional Notes">ملاحظات إضافية</label>
+                                <textarea name="notes" rows="4" placeholder="" data-ar-placeholder="أي معلومات إضافية تود إضافتها..." data-en-placeholder="Any additional information you'd like to add..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn" data-ar="إرسال طلب ا��حجز" data-en="Submit Booking Request">إرسال طلب الحجز</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <h2 data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h2>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h3 data-ar="الهاتف" data-en="Phone">الهاتف</h3>
+                                <p class="contact-value">+963 938 289 397</p>
+                                <p class="contact-note" data-ar="متاح للمكالمات والواتساب" data-en="Available for calls and WhatsApp">متاح للمكالمات والواتساب</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-details">
+                                <h3 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h3>
+                                <p class="contact-value">joustinaaltalli@gmail.com</p>
+                                <p class="contact-note" data-ar="نرد على الرسائل خلال 24 ساعة" data-en="We respond to messages within 24 hours">نرد على الرسائل خلال 24 ساعة</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h3 data-ar="العنوان" data-en="Address">العنوان</h3>
+                                <p class="contact-value" data-ar="دمشق، سوريا" data-en="Damascus, Syria">دمشق، سوريا</p>
+                                <p class="contact-note" data-ar="سيتم تزويدكم بالعنوان التفصيلي عند الحجز" data-en="Detailed address will be provided upon booking">سيتم تزويدكم بالعنوان التفصيلي عند الحجز</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">⏰</div>
+                            <div class="contact-details">
+                                <h3 data-ar="أوقات الرد السريع" data-en="Quick Response Hours">أوقات الرد السريع</h3>
+                                <p class="contact-value" data-ar="9:00 ص - 9:00 م" data-en="9:00 AM - 9:00 PM">9:00 ص - 9:00 م</p>
+                                <p class="contact-note" data-ar="الحالات الطارئة 24/7" data-en="Emergency cases 24/7">الحالات الطارئة 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Contact Methods -->
+        <section class="quick-contact">
+            <div class="container">
+                <h2 data-ar="طرق التواصل السريع" data-en="Quick Contact Methods">طرق التواصل السريع</h2>
+                <div class="quick-contact-grid">
+                    <a href="https://wa.me/963938289397" target="_blank" class="quick-contact-item whatsapp">
+                        <div class="quick-icon">💬</div>
+                        <h3 data-ar="واتساب" data-en="WhatsApp">واتساب</h3>
+                        <p data-ar="تواصل فوري عبر الواتساب" data-en="Instant contact via WhatsApp">تواصل فوري عبر الواتساب</p>
+                    </a>
+                    
+                    <a href="tel:+963938289397" class="quick-contact-item phone">
+                        <div class="quick-icon">📞</div>
+                        <h3 data-ar="مكالمة هاتفية" data-en="Phone Call">مكالمة هاتفية</h3>
+                        <p data-ar="اتصل بنا مباشرة" data-en="Call us directly">اتصل بنا مباشرة</p>
+                    </a>
+                    
+                    <a href="mailto:joustinaaltalli@gmail.com" class="quick-contact-item email">
+                        <div class="quick-icon">✉️</div>
+                        <h3 data-ar="بريد إلكتروني" data-en="Email">بريد إلكتروني</h3>
+                        <p data-ar="أرسل لنا رسالة إلكترونية" data-en="Send us an email">أرسل لنا رسالة إلكترونية</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Contact -->
+        <section class="emergency-contact">
+            <div class="container">
+                <div class="emergency-card">
+                    <div class="emergency-icon">🚨</div>
+                    <div class="emergency-content">
+                        <h2 data-ar="حالات الطوارئ" data-en="Emergency Cases">حالات الطوارئ</h2>
+                        <p data-ar="في حالة الطوارئ الطبية، تواصل معنا فوراً على الرقم التالي:" data-en="In case of medical emergency, contact us immediately at:">في حالة الطوارئ الطبية، تواصل معنا فوراً على الرقم التالي:</p>
+                        <div class="emergency-phone">
+                            <span class="phone-number">+963 938 289 397</span>
+                        </div>
+                        <div class="emergency-types">
+                            <h3 data-ar="حالات الطوارئ تشمل:" data-en="Emergency cases include:">حالات الطوارئ تشمل:</h3>
+                            <ul>
+                                <li data-ar="ألم الأسنان الشديد" data-en="Severe tooth pain">ألم الأسنان الشديد</li>
+                                <li data-ar="كسر في الأسنان أو الفك" data-en="Tooth or jaw fracture">كسر في الأسنان أو الفك</li>
+                                <li data-ar="نزيف شديد في اللثة" data-en="Severe gum bleeding">نزيف شديد في اللثة</li>
+                                <li data-ar="تورم في الوجه أو الفم" data-en="Facial or mouth swelling">تورم في الوجه أو الفم</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 data-ar="الأسئلة الشائعة" data-en="Frequently Asked Questions">الأسئلة الشائعة</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3 data-ar="كيف يمكنني حجز موعد؟" data-en="How can I book an appointment?">كيف يمكنني حجز موعد؟</h3>
+                        <p data-ar="يمكنك حجز موعد من خلال ملء النموذج أعلاه، أو الاتصال بنا مباشرة، أو إرسال رسالة واتساب." data-en="You can book an appointment by filling the form above, calling us directly, or sending a WhatsApp message.">يمكنك حجز موعد من خلال ملء النموذج أعلاه، أو الاتصال بنا مباشرة، أو إرسال رسالة واتساب.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 data-ar="هل يمكنني إلغاء أو تعديل موعدي؟" data-en="Can I cancel or modify my appointment?">هل يمكنني إلغاء أو تعديل موعدي؟</h3>
+                        <p data-ar="نعم، يمكنك إلغاء أو تعديل موعدك بالاتص��ل بنا قبل 24 ساعة على الأقل من الموعد المحدد." data-en="Yes, you can cancel or modify your appointment by calling us at least 24 hours before the scheduled time.">نعم، يمكنك إلغاء أو تعديل موعدك بالاتصال بنا قبل 24 ساعة على الأقل من الموعد المحدد.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 data-ar="ما هي طرق الدفع المتاحة؟" data-en="What payment methods are available?">ما هي طرق الدفع المتاحة؟</h3>
+                        <p data-ar="نقبل الدفع نقداً، وسنوافيكم بتفاصيل طرق الدفع الأخرى عند الحجز." data-en="We accept cash payment, and will provide details of other payment methods when booking.">نقبل الدفع نقداً، وسنوافيكم بتفاصيل طرق الدفع الأخرى عند الحجز.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 data-ar="هل تقدمون خدمات للأطفال؟" data-en="Do you provide services for children?">هل تقدمون خدمات للأطفال؟</h3>
+                        <p data-ar="نعم، نقدم خد��ات طب أسنان الأطفال في بيئة مريحة وودودة مخصصة للأطفال." data-en="Yes, we provide pediatric dental services in a comfortable and child-friendly environment.">نعم، نقدم خدمات طب أسنان الأطفال في بيئة مريحة وودودة مخصصة للأطفال.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 data-ar="كم تستغرق الجلسة العادية؟" data-en="How long does a regular session take?">كم تستغرق الجلسة العادية؟</h3>
+                        <p data-ar="تختلف مدة الجلسة حسب نوع العلاج، من 30 دقيقة للفحص العادي إلى ساعتين للعلاجات المعقدة." data-en="Session duration varies by treatment type, from 30 minutes for regular checkups to 2 hours for complex treatments.">تختلف مدة الجلسة حسب نوع العلاج، من 30 دقيقة للفحص العادي إلى ساعتين للعلاجات المعقدة.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 data-ar="هل تتوفر مواقف للسيارات؟" data-en="Is parking available?">هل تتوفر مواقف للسيارات؟</h3>
+                        <p data-ar="لا توجد مواقف سيارات خاصة بالعيادة، يُرجى التخطيط للمواصلات مسبقاً." data-en="There is no private parking for the clinic, please plan transportation in advance.">لا توجد مواقف سيارات خاصة بالعيادة، يُرجى التخطيط للمواصلات مسبقاً.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 data-ar="لا تتردد في التواصل معنا" data-en="Don't Hesitate to Contact Us">لا تتردد في التواصل معنا</h2>
+                <p data-ar="فريقنا جاهز للإجابة على جميع استفساراتكم وتقديم أفضل الخدمات" data-en="Our team is ready to answer all your inquiries and provide the best services">فريقنا جاهز للإجابة على جميع استفساراتكم وتقديم أفضل الخدمات</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/963938289397" target="_blank" class="cta-button whatsapp-btn" data-ar="تواصل عبر الواتساب" data-en="Contact via WhatsApp">تواصل عبر الواتساب</a>
+                    <a href="tel:+963938289397" class="cta-button phone-btn" data-ar="اتصل الآن" data-en="Call Now">اتصل الآن</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-ar="عيادة د. جوستينا" data-en="Dr. Justina's Clinic">عيادة د. جوستينا</h3>
+                    <p data-ar="نقدم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية" data-en="We provide dental services with the highest standards of quality and professionalism">نقدم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                        <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+                        <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                        <li><a href="gallery.html" data-ar="المعرض" data-en="Gallery">المعرض</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-ar="معلومات التواصل" data-en="Contact Info">معلومات التواصل</h3>
+                    <p data-ar="الهاتف: +963 938 289 397" data-en="Phone: +963 938 289 397">الهاتف: +963 938 289 397</p>
+                    <p data-ar="البريد: joustinaaltalli@gmail.com" data-en="Email: joustinaaltalli@gmail.com">البريد: joustinaaltalli@gmail.com</p>
+                    <p data-ar="العنوان: دمشق، سوريا" data-en="Address: Damascus, Syria">العنوان: دمشق، سوريا</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-ar="© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب الأسنان. جميع الحقوق محفوظة." data-en="© 2025 Dr.J Dental Clinic - Dr. Justina Youssef Al-Tali Dental Clinic. All rights reserved.">© 2025 Dr.J Dental Clinic - عيادة د. جوستينا يوسف التلي لطب ا��أسنان. جميع الحقوق محفوظة.</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <p style="font-size: 0.9rem; opacity: 0.8;">
+                        <span data-ar="تم التصميم والتطوير بواسطة" data-en="Designed & Developed by">تم التصميم والتطوير بواسطة</span>
+                        <a href="https://habeebandraws.vercel.app/" target="_blank" 
+                           style="color: #87ceeb; text-decoration: none; font-weight: bold; transition: color 0.3s;"
+                           onmouseover="this.style.color='#ffffff'" 
+                           onmouseout="this.style.color='#87ceeb'">
+                            Habeeb Andraws
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
