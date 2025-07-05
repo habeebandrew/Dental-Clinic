@@ -170,7 +170,7 @@ dr.joss/
 
 ## الترخيص | License
 
-هذ�� المشروع مرخص تحت رخصة MIT - انظر ملف [LICENSE](LICENSE) للتفاصيل.
+هذ المشروع مرخص تحت رخصة MIT - انظر ملف [LICENSE](LICENSE) للتفاصيل.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 

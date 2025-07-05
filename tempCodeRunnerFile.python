@@ -1,0 +1,45 @@
+from docx import Document
+from docx.shared import Pt
+from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
+
+# إنشاء مستند Word
+doc = Document()
+
+# إعداد عنوان التقرير
+title = doc.add_heading('تقرير مشروع: نظام التعليم الإلكتروني', 0)
+title.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+
+# فاصل
+doc.add_paragraph("\n")
+
+# العناوين الرئيسية مع فقرات جاهزة للتعبئة
+sections = [
+    ("فهرس المحتويات", "(قم بإدراج جدول المحتويات التلقائي من تبويب 'مراجع' → 'جدول المحتويات')"),
+    ("1. المقدمة", "..."),
+    ("2. وصف عام للنظام", "..."),
+    ("3. الوظيفة الثانية – تطوير نظام التعليم الإلكتروني", "..."),
+    ("3.1 تصميم بنية الخدمات (الميكروخدمات)", "..."),
+    ("3.2 تنفيذ Web Service باستخدام REST أو SOAP", "..."),
+    ("3.3 إعداد API Gateway", "..."),
+    ("3.4 تطبيق Service Discovery", "..."),
+    ("3.5 التواصل الداخلي بين الخدمات باستخدام عناوين ديناميكية", "..."),
+    ("3.6 معالجة الفشل أو التأخير في الاتصال بين الخدمات", "..."),
+    ("3.7 آلية Load Balancing وتكاملها مع Service Discovery", "..."),
+    ("4. توضيح تكامل الأدوات (مثل Ribbon مع Eureka أو Consul)", "..."),
+    ("5. المخططات المعمارية والتوضيحية", "..."),
+    ("6. الاستنتاجات والتوصيات", "..."),
+    ("7. المراجع والمصادر", "..."),
+    ("8. الملحقات (كود، روابط، أدوات مستعملة)", "...")
+]
+
+# إدراج المحتوى المنسق
+for title_text, body in sections:
+    doc.add_page_break()
+    doc.add_heading(title_text, level=1)
+    doc.add_paragraph(body)
+
+# حفظ الملف
+file_path = "/mnt/data/قالب_تقرير_نظام_التعليم_الإلكتروني.docx"
+doc.save(file_path)
+
+file_path

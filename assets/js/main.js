@@ -290,7 +290,7 @@ function handleBooking(event) {
 // Get service name in specified language
 function getServiceName(serviceValue, lang) {
     const services = {
-        'consultation': { ar: 'استشار�� عامة', en: 'General Consultation' },
+        'consultation': { ar: 'استشارات عامة', en: 'General Consultation' },
         'restoration': { ar: 'ترميمات تجميلية', en: 'Cosmetic Restorations' },
         'crowns': { ar: 'جسور وتيجان وفينير', en: 'Bridges, Crowns & Veneers' },
         'implants': { ar: 'زراعة الأسنان', en: 'Dental Implants' },
