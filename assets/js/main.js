@@ -263,10 +263,32 @@ function handleBooking(event) {
     // Create WhatsApp message
     const timeText = bookingData.time ? getTimeText(bookingData.time, currentLanguage) : '';
     const message = currentLanguage === 'ar' 
-        ? `مرحباً، أود حجز موعد:\n\nالاسم: ${bookingData.name}\nرقم الهاتف: ${bookingData.phone}\nالتاريخ المفضل: ${bookingData.date}${timeText ? `\nالوقت المفضل: ${timeText}` : ''}\nنوع الخدمة: ${getServiceName(bookingData.service, 'ar')}\nملاحظات: ${bookingData.notes || 'لا توجد'}`
-        : `Hello, I would like to book an appointment:\n\nName: ${bookingData.name}\nPhone: ${bookingData.phone}\nPreferred Date: ${bookingData.date}${timeText ? `\nPreferred Time: ${timeText}` : ''}\nService Type: ${getServiceName(bookingData.service, 'en')}\nNotes: ${bookingData.notes || 'None'}`;
+        ? `🦷 *طلب حجز موعد - عيادة د. جوستينا لطب الأسنان* 🦷\n\n` +
+          `👋 السلام عليكم، أود حجز موعد في العيادة:\n\n` +
+          `📝 *بيانات المريض:*\n` +
+          `▪️ الاسم: ${bookingData.name}\n` +
+          `▪️ رقم الهاتف: ${bookingData.phone}\n\n` +
+          `📅 *تفاصيل الموعد:*\n` +
+          `▪️ التاريخ المفضل: ${bookingData.date}\n` +
+          `${timeText ? `▪️ الوقت المفضل: ${timeText}\n` : ''}` +
+          `▪️ نوع الخدمة: ${getServiceName(bookingData.service, 'ar')}\n\n` +
+          `📋 *ملاحظات إضافية:*\n` +
+          `${bookingData.notes || 'لا توجد ملاحظات'}\n\n` +
+          `🙏 أتطلع لسماع ردكم وتأكيد الموعد، وشكراً لكم.`
+        : `🦷 *Appointment Booking Request - Dr. Joustina Dental Clinic* 🦷\n\n` +
+          `👋 Hello, I would like to book an appointment at the clinic:\n\n` +
+          `📝 *Patient Information:*\n` +
+          `▪️ Name: ${bookingData.name}\n` +
+          `▪️ Phone: ${bookingData.phone}\n\n` +
+          `📅 *Appointment Details:*\n` +
+          `▪️ Preferred Date: ${bookingData.date}\n` +
+          `${timeText ? `▪️ Preferred Time: ${timeText}\n` : ''}` +
+          `▪️ Service Type: ${getServiceName(bookingData.service, 'en')}\n\n` +
+          `📋 *Additional Notes:*\n` +
+          `${bookingData.notes || 'No additional notes'}\n\n` +
+          `🙏 Looking forward to your response and appointment confirmation. Thank you.`;
     
-    const whatsappUrl = `https://wa.me/963938289397?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/963930478240?text=${encodeURIComponent(message)}`;
     
     // Show confirmation and redirect
     const confirmMessage = currentLanguage === 'ar' 
@@ -338,7 +360,7 @@ function handleNewsletter(event) {
         ? `مرحباً، أود الاشتراك في النشرة الطبية:\n\nالبريد الإلكتروني: ${email}`
         : `Hello, I would like to subscribe to the medical newsletter:\n\nEmail: ${email}`;
     
-    const whatsappUrl = `https://wa.me/963938289397?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/963930478240?text=${encodeURIComponent(message)}`;
     
     // Show confirmation and redirect
     const confirmMessage = currentLanguage === 'ar' 
