@@ -113,13 +113,16 @@ function updateContent(lang) {
     // Update text content
     const elements = document.querySelectorAll('[data-ar][data-en]');
     elements.forEach(element => {
-        if (lang === 'ar') {
-            element.textContent = element.getAttribute('data-ar');
-        } else {
-            element.textContent = element.getAttribute('data-en');
-        }
+        let arText = element.getAttribute('data-ar');
+        let enText = element.getAttribute('data-en');
+
+            if (lang === 'ar') {
+                element.textContent = arText;
+            } else {
+                element.textContent = enText;
+            }
     });
-    
+
     // Update placeholders
     const placeholderElements = document.querySelectorAll('[data-ar-placeholder][data-en-placeholder]');
     placeholderElements.forEach(element => {
