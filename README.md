@@ -4,7 +4,7 @@
 
 موقع ويب متعدد الصفحات لعيادة د. جوستينا لطب الأسنان، يقدم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية. الموقع ثنائي اللغة (العربية والإنجليزية) ويوفر معلومات شاملة عن العيادة وخدماتها وساعات العمل ومعرض الأعمال والمدونة الطبية.
 
-A multi-page website for Dr. Justina's Dental Clinic, offering dental services with the highest standards of quality and professionalism. The site is bilingual (Arabic and English) and provides comprehensive information about the clinic, its services, working hours, work gallery, and medical blog.
+A multi-page website for Dr. joustina's Dental Clinic, offering dental services with the highest standards of quality and professionalism. The site is bilingual (Arabic and English) and provides comprehensive information about the clinic, its services, working hours, work gallery, and medical blog.
 
 ## بنية المشروع | Project Structure
 
